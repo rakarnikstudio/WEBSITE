@@ -1,0 +1,128 @@
+backend:
+  name: test-repo
+site_url: https://rakarnik.digital
+display_url: https://rakarnik.digital
+logo_url: /face.png
+media_folder: photos
+public_folder: /photos
+media_libraries:
+  default:
+    config:
+      max_file_size: 30000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 2400
+          height: 2400
+collections:
+- name: portfolio
+  label: Portfolio
+  editor:
+    preview: false
+  files:
+  - name: photos
+    label: Photos & details
+    file: data/site.json
+    format: json
+    description: Add, remove and reorder photos, then press Save. Your About text and contact details are further down.
+    fields:
+    - name: items
+      label: Photos
+      label_singular: Photo
+      widget: list
+      add_to_top: true
+      summary: '{{fields.cat}} {{fields.title}}'
+      fields:
+      - name: src
+        label: Photo
+        widget: image
+        hint: JPG, about 2400 px on the long side is ideal
+      - name: cat
+        label: Category
+        widget: select
+        options:
+        - Portraits
+        - Automotive
+        - Lifestyle
+        - Sports
+        - Film
+        default: Portraits
+      - name: title
+        label: Title (optional)
+        widget: string
+        required: false
+      - name: cover
+        label: Use as the big cover photo
+        widget: boolean
+        default: false
+        required: false
+        hint: Turn this on for one photo only
+      - name: kind
+        widget: hidden
+        default: image
+      - name: thumb
+        widget: hidden
+        required: false
+      - name: w
+        widget: hidden
+        required: false
+      - name: h
+        widget: hidden
+        required: false
+      collapsed: true
+      thumbnail: src
+    - name: profile
+      label: Your details
+      widget: object
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: role
+        label: What you do
+        widget: string
+      - name: location
+        label: Location
+        widget: string
+      - name: about
+        label: About you
+        widget: text
+      - name: email
+        label: Email
+        widget: string
+        required: false
+      - name: instagram
+        label: Instagram username
+        widget: string
+        required: false
+      - name: available
+        label: Show "Available for shoots"
+        widget: boolean
+        default: true
+    - name: pages
+      label: Category page descriptions
+      widget: object
+      fields:
+      - name: Portraits
+        widget: text
+        required: false
+      - name: Automotive
+        widget: text
+        required: false
+      - name: Lifestyle
+        widget: text
+        required: false
+      - name: Sports
+        widget: text
+        required: false
+      - name: Film
+        widget: text
+        required: false
+    - name: categories
+      widget: hidden
+    - name: services
+      widget: hidden
+    - name: cover
+      widget: hidden
+      required: false

@@ -37,7 +37,7 @@ collections:
       label_singular: Photo
       widget: list
       add_to_top: true
-      summary: '{{fields.cat}} · {{fields.title}}'
+      summary: '{{fields.cat}} {{fields.title}}'
       fields:
       - name: src
         label: Photo
@@ -75,6 +75,8 @@ collections:
       - name: h
         widget: hidden
         required: false
+      collapsed: true
+      thumbnail: src
     - name: profile
       label: Your details
       widget: object
