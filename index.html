@@ -460,6 +460,25 @@ html,body{cursor:var(--cur-arrow)}
 <script type="application/json" id="seed">null</script>
 <script>
 (() => {
+/* Live data: GitHub's API returns the newest saved version instantly; the published copy is the fallback */
+const REPO = "rakarnikstudio/WEBSITE";
+async function liveData(){
+  try {
+    const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 2500);
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/data/site.json?ref=main&t=${Date.now()}`, {headers:{Accept:"application/vnd.github.raw+json"}, cache:"no-store", signal:ctl.signal});
+    clearTimeout(t);
+    return r.ok ? await r.json() : null;
+  } catch { return null; }
+}
+/* A photo added seconds ago may not be published yet: load it straight from GitHub until it is */
+addEventListener("error", e => {
+  const im = e.target;
+  if (!(im instanceof HTMLImageElement) || im.dataset.raw) return;
+  const u = new URL(im.src, location.href);
+  if (u.origin !== location.origin || !u.pathname.startsWith("/photos/")) return;
+  im.dataset.raw = "1";
+  im.src = `https://raw.githubusercontent.com/${REPO}/main${decodeURIComponent(u.pathname)}`;
+}, true);
 const DEF = {profile:{name:"Nik Rakar",role:"Photographer & cinematographer",location:"Ljubljana, Slovenia",about:"",email:"",instagram:"",available:true},categories:["Portraits","Automotive","Lifestyle","Sports","Film"],services:[],pages:{},cover:null,items:[]};
 const DESC = {
   Portraits:"Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us.",
@@ -952,7 +971,7 @@ async function load(){
   try {
     let j = null;
     try { j = JSON.parse($("seed").textContent); } catch {}
-    if (!j || typeof j !== "object") { const r = await fetch("data/site.json?t=" + Date.now(), {cache:"no-store"}); if (r.ok) j = await r.json(); }
+    if (!j || typeof j !== "object") { j = await liveData(); if (!j) { const r = await fetch("data/site.json?t=" + Date.now(), {cache:"no-store"}); if (r.ok) j = await r.json(); } }
     if (j) {
       S = Object.assign({}, DEF, j, {profile: Object.assign({}, DEF.profile, j.profile || {})});
       if (!Array.isArray(S.items)) S.items = [];
