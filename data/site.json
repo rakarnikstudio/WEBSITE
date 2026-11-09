@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "src": "/photos/_DSC9754.webp",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image"
+    },
+    {
       "src": "/photos/automotive/automotive-10.jpg",
       "cat": "Automotive",
       "title": "",
@@ -44,7 +51,7 @@
       "src": "/photos/automotive/automotive-03.jpg",
       "cat": "Automotive",
       "title": "",
-      "cover": false,
+      "cover": true,
       "kind": "image",
       "thumb": "/photos/thumbs/automotive/automotive-03.jpg",
       "w": 2400,
@@ -278,16 +285,6 @@
       "kind": "image",
       "thumb": "/photos/thumbs/automotive/automotive-14.jpg",
       "w": 1800,
-      "h": 2400
-    },
-    {
-      "src": "/photos/portraits/portraits-11.jpg",
-      "cat": "Portraits",
-      "title": "",
-      "cover": false,
-      "kind": "image",
-      "thumb": "/photos/thumbs/portraits/portraits-11.jpg",
-      "w": 1600,
       "h": 2400
     },
     {
