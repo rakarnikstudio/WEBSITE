@@ -952,7 +952,7 @@ async function load(){
   try {
     let j = null;
     try { j = JSON.parse($("seed").textContent); } catch {}
-    if (!j || typeof j !== "object") { const r = await fetch("data/site.json", {cache:"no-store"}); if (r.ok) j = await r.json(); }
+    if (!j || typeof j !== "object") { const r = await fetch("data/site.json?t=" + Date.now(), {cache:"no-store"}); if (r.ok) j = await r.json(); }
     if (j) {
       S = Object.assign({}, DEF, j, {profile: Object.assign({}, DEF.profile, j.profile || {})});
       if (!Array.isArray(S.items)) S.items = [];
