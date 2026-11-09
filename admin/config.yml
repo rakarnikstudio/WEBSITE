@@ -62,7 +62,7 @@ collections:
         widget: boolean
         default: false
         required: false
-        hint: Turn this on for one photo only
+        hint: 'Only one photo can be the cover: turn this off on the old cover photo when you pick a new one'
       - name: kind
         widget: hidden
         default: image

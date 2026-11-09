@@ -11,7 +11,7 @@
       "src": "/photos/automotive/automotive-10.jpg",
       "cat": "Automotive",
       "title": "",
-      "cover": true,
+      "cover": false,
       "kind": "image",
       "thumb": "/photos/thumbs/automotive/automotive-10.jpg",
       "w": 2400,
