@@ -478,8 +478,8 @@ const $ = id => document.getElementById(id) || DUMMY;
 const DUMMY = document.createElement("div");
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const src = it => it.src ? (/^(https?:|\/)/.test(it.src) ? it.src : "/" + it.src) : ("/_blob/" + it.id);
-/* grid thumbnails: prepared ones, else Netlify resizes the upload on the fly */
-const thumbOf = it => it.thumb ? "/" + it.thumb.replace(/^\//, "") : (it.src && /(netlify\.app|rakarnik\.digital)$/.test(location.hostname) ? "/.netlify/images?url=" + encodeURIComponent(src(it)) + "&w=1000&q=78" : src(it));
+/* grid thumbnails: prepared ones, else the upload itself (the admin page resizes uploads) */
+const thumbOf = it => it.thumb ? "/" + it.thumb.replace(/^\//, "") : src(it);
 const OK = ["image/jpeg","image/png","image/webp","image/gif","video/mp4","video/webm"];
 const EXT = {jpg:"image/jpeg",jpeg:"image/jpeg",png:"image/png",webp:"image/webp",gif:"image/gif",mp4:"video/mp4",webm:"video/webm",m4v:"video/mp4"};
 const MAX = 20 * 1024 * 1024;

@@ -10,6 +10,16 @@ display_url: https://rakarnik.digital
 logo_url: /face.png
 media_folder: photos
 public_folder: /photos
+media_libraries:
+  default:
+    config:
+      max_file_size: 30000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 2400
+          height: 2400
 collections:
 - name: portfolio
   label: Portfolio
