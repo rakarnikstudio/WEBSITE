@@ -1,4 +1,506 @@
 {
+  "items": [
+    {
+      "src": "/photos/automotive/automotive-10.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": true,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-10.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-04.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-04.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-12.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-12.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-15.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-15.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-03.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-03.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-24.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-24.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-09.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-09.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/automotive/automotive-13.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-13.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-07.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-07.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-15.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-15.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-20.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-20.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-01.jpg",
+      "cat": "Automotive",
+      "title": "Nissan Navara in the snow",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-01.jpg",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "src": "/photos/portraits/portraits-01.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-01.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-02.jpg",
+      "cat": "Automotive",
+      "title": "Nissan Navara in the snow",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-02.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-02.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-02.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-04.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-04.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-03.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-03.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-05.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-05.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-05.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-05.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-06.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-06.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-06.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-06.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-07.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-07.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-08.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-08.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-08.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-08.jpg",
+      "w": 1600,
+      "h": 2400
+    },
+    {
+      "src": "/photos/portraits/portraits-09.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-09.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-11.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-11.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-10.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-10.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-14.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-14.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/portraits/portraits-11.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-11.jpg",
+      "w": 1600,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-16.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-16.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-13.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-13.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-17.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-17.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-14.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-14.jpg",
+      "w": 1600,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-18.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-18.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/portraits/portraits-16.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-16.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-19.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-19.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-17.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-17.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-20.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-20.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-18.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-18.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-21.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-21.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-19.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-19.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-22.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-22.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-21.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-21.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-23.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-23.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-22.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-22.jpg",
+      "w": 1600,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-24.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-24.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-23.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-23.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/automotive/automotive-25.jpg",
+      "cat": "Automotive",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/automotive/automotive-25.jpg",
+      "w": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/portraits/portraits-25.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-25.jpg",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "src": "/photos/portraits/portraits-26.jpg",
+      "cat": "Portraits",
+      "title": "",
+      "cover": false,
+      "kind": "image",
+      "thumb": "/photos/thumbs/portraits/portraits-26.jpg",
+      "w": 1800,
+      "h": 2400
+    }
+  ],
   "profile": {
     "name": "Nik Rakar",
     "role": "Photographer & cinematographer",
@@ -7,6 +509,13 @@
     "email": "rakarnik.studio@gmail.com",
     "instagram": "nik_rakar",
     "available": true
+  },
+  "pages": {
+    "Portraits": "Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us.",
+    "Automotive": "Cars in motion and at rest: rolling shots, statics, details and car meets, on stills and on video.",
+    "Lifestyle": "Everyday moments and brand content. Real people in real places, made for social media and campaigns.",
+    "Sports": "Action, teams and match days. Peak moments and the energy around the game.",
+    "Film": "Short films, reels and edits, from planning the shots to the final cut."
   },
   "categories": [
     "Portraits",
@@ -42,524 +551,5 @@
       "kind": "Video"
     }
   ],
-  "cover": null,
-  "items": [
-    {
-      "src": "/photos/automotive/automotive-10.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-10.jpg",
-      "cover": true
-    },
-    {
-      "src": "/photos/portraits/portraits-04.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-04.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-12.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-12.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-15.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-15.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-03.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-03.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-24.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-24.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-09.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-09.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-12.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1600,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-12.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-13.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-13.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-07.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-07.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-15.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-15.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-20.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-20.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-01.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "Nissan Navara in the snow",
-      "w": 2400,
-      "h": 1800,
-      "thumb": "/photos/thumbs/automotive/automotive-01.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-01.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-01.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-02.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "Nissan Navara in the snow",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-02.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-02.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-02.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-04.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-04.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-03.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-03.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-05.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-05.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-05.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-05.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-06.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-06.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-06.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-06.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-07.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-07.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-08.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-08.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-08.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 1600,
-      "h": 2400,
-      "thumb": "/photos/thumbs/automotive/automotive-08.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-09.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-09.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-11.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-11.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-10.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-10.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-14.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/automotive/automotive-14.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-11.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1600,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-11.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-16.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-16.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-13.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-13.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-17.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-17.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-14.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1600,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-14.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-18.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/automotive/automotive-18.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-16.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-16.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-19.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-19.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-17.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-17.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-20.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-20.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-18.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-18.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-21.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-21.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-19.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-19.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-22.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-22.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-21.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-21.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-23.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-23.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-22.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1600,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-22.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-24.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-24.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-23.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-23.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/automotive/automotive-25.jpg",
-      "kind": "image",
-      "cat": "Automotive",
-      "title": "",
-      "w": 2400,
-      "h": 1600,
-      "thumb": "/photos/thumbs/automotive/automotive-25.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-25.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-25.jpg",
-      "cover": false
-    },
-    {
-      "src": "/photos/portraits/portraits-26.jpg",
-      "kind": "image",
-      "cat": "Portraits",
-      "title": "",
-      "w": 1800,
-      "h": 2400,
-      "thumb": "/photos/thumbs/portraits/portraits-26.jpg",
-      "cover": false
-    }
-  ],
-  "pages": {
-    "Portraits": "Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us.",
-    "Automotive": "Cars in motion and at rest: rolling shots, statics, details and car meets, on stills and on video.",
-    "Lifestyle": "Everyday moments and brand content. Real people in real places, made for social media and campaigns.",
-    "Sports": "Action, teams and match days. Peak moments and the energy around the game.",
-    "Film": "Short films, reels and edits, from planning the shots to the final cut."
-  }
+  "cover": null
 }
