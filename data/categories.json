@@ -1,0 +1,44 @@
+{
+  "cats": [
+    {
+      "id": "portraits",
+      "name": "Portraits",
+      "what": "Headshots, editorial, personal shoots",
+      "kind": "Photo",
+      "icon": "Portraits",
+      "description": "Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us."
+    },
+    {
+      "id": "automotive",
+      "name": "Automotive",
+      "what": "Rollers, statics, car meets and events",
+      "kind": "Photo · Video",
+      "icon": "Automotive",
+      "description": "Cars in motion and at rest: rolling shots, statics, details and car meets, on stills and on video."
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle",
+      "what": "Brands, social content, everyday moments",
+      "kind": "Photo · Video",
+      "icon": "Lifestyle",
+      "description": "Everyday moments and brand content. Real people in real places, made for social media and campaigns."
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "what": "Action, teams, matches and events",
+      "kind": "Photo",
+      "icon": "Sports",
+      "description": "Action, teams and match days. Peak moments and the energy around the game."
+    },
+    {
+      "id": "film",
+      "name": "Film",
+      "what": "Short films, reels and edits",
+      "kind": "Video",
+      "icon": "Film",
+      "description": "Short films, reels and edits, from planning the shots to the final cut."
+    }
+  ]
+}

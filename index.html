@@ -460,12 +460,23 @@ html,body{cursor:var(--cur-arrow)}
 <script type="application/json" id="seed">null</script>
 <script>
 (() => {
+/* Categories: photos store a category code; names, texts and icons come from data/categories.json */
+function applyCats(list){
+  const cats = (list || []).filter(c => c && c.id && c.name);
+  if (!cats.length) { S.items.forEach(it => { if (it.cat && it.cat === it.cat.toLowerCase()) it.cat = it.cat[0].toUpperCase() + it.cat.slice(1); }); return; }
+  const byId = Object.fromEntries(cats.map(c => [String(c.id), c]));
+  S.items.forEach(it => { const c = byId[it.cat] || cats.find(c => c.name === it.cat); if (c) it.cat = c.name; });
+  S.categories = cats.map(c => c.name);
+  S.services = cats.map(c => ({name: c.name, what: c.what || "", kind: c.kind || ""}));
+  S.pages = Object.fromEntries(cats.map(c => [c.name, c.description || ""]));
+  cats.forEach(c => { const k = IC[c.icon] ? c.icon : (IC[c.name] ? c.name : "camera"); IC[c.name] = IC[k]; HUE[c.name] = HUE[k] ?? 210; });
+}
 /* Live data: GitHub's API returns the newest saved version instantly; the published copy is the fallback */
 const REPO = "rakarnikstudio/WEBSITE";
-async function liveData(){
+async function liveData(path = "data/site.json"){
   try {
     const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 2500);
-    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/data/site.json?ref=main&t=${Date.now()}`, {headers:{Accept:"application/vnd.github.raw+json"}, cache:"no-store", signal:ctl.signal});
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}?ref=main&t=${Date.now()}`, {headers:{Accept:"application/vnd.github.raw+json"}, cache:"no-store", signal:ctl.signal});
     clearTimeout(t);
     return r.ok ? await r.json() : null;
   } catch { return null; }
@@ -521,6 +532,11 @@ const IC = {
   moon:'<path d="M19.5 14.5A7.5 7.5 0 0 1 9.5 4.5a7.5 7.5 0 1 0 10 10z"/><circle class="f" cx="16.5" cy="6.5" r=".9"/>',
   spark:'<path d="M12 3.5c.6 4.3 2.4 6.1 6.5 6.5-4.1.5-5.9 2.3-6.5 6.5-.6-4.2-2.4-6-6.5-6.5 4.1-.4 5.9-2.2 6.5-6.5z"/><path d="M18.5 16v3M17 17.5h3"/>',
   play:'<path d="M8 5.5v13l10-6.5z"/>',
+  city:'<rect x="4" y="9" width="6.5" height="11" rx="1.5"/><rect x="12" y="4" width="8" height="16" rx="1.5"/><path d="M6.5 12.5h1.5M6.5 16h1.5M15 7.5h2M15 11h2M15 14.5h2"/><path d="M3 20.5h18"/>',
+  mountain:'<path d="M3 19.5l6.5-11 4 6.5 2.5-3.5 5 8z"/><path d="M7.6 11.8l1.9 1.5 1.8-1.6"/><circle cx="17.5" cy="6" r="1.8"/>',
+  heart:'<path d="M12 19.5s-7.5-4.6-7.5-10a4.2 4.2 0 0 1 7.5-2.6 4.2 4.2 0 0 1 7.5 2.6c0 5.4-7.5 10-7.5 10z"/>',
+  music:'<path d="M9 17.5V6l10-2v11.5"/><circle cx="6.8" cy="17.5" r="2.4"/><circle cx="16.8" cy="15.5" r="2.4"/>',
+  plane:'<path d="M3.5 13.5l17-7-4 13-4.5-4.5-3 3v-4.5z"/><path d="M9 13.5l11.5-7"/>',
   empty:'<rect x="3.5" y="5.5" width="17" height="13" rx="4"/><circle cx="12" cy="12" r="3"/>'
 };
 const HUE = {all:210,Portraits:330,Automotive:12,Lifestyle:42,Sports:140,Film:268,camera:330,mail:200,social:300,pin:190,pencil:45,upload:205,play:12,spark:140};
@@ -976,6 +992,9 @@ async function load(){
       S = Object.assign({}, DEF, j, {profile: Object.assign({}, DEF.profile, j.profile || {})});
       if (!Array.isArray(S.items)) S.items = [];
       { const c = S.items.find(x => x && x.cover); if (c) S.coverSrc = c.src; }
+      let cj = await liveData("data/categories.json");
+      if (!cj) { try { const r2 = await fetch("data/categories.json?t=" + Date.now(), {cache:"no-store"}); if (r2.ok) cj = await r2.json(); } catch {} }
+      applyCats(cj && Array.isArray(cj.cats) ? cj.cats : null);
     }
   } catch {}
   go();

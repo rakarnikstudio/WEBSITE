@@ -37,7 +37,7 @@ collections:
       label_singular: Photo
       widget: list
       add_to_top: true
-      summary: '{{fields.cat}} {{fields.title}}'
+      summary: '{{fields.title}}'
       fields:
       - name: src
         label: Photo
@@ -45,14 +45,15 @@ collections:
         hint: JPG, about 2400 px on the long side is ideal
       - name: cat
         label: Category
-        widget: select
-        options:
-        - Portraits
-        - Automotive
-        - Lifestyle
-        - Sports
-        - Film
-        default: Portraits
+        widget: relation
+        collection: portfolio
+        file: categories
+        value_field: cats.*.id
+        display_fields:
+        - cats.*.name
+        search_fields:
+        - cats.*.name
+        hint: Rename or add categories under Portfolio → Categories
       - name: title
         label: Title (optional)
         widget: string
@@ -105,25 +106,6 @@ collections:
         label: Show "Available for shoots"
         widget: boolean
         default: true
-    - name: pages
-      label: Category page descriptions
-      widget: object
-      fields:
-      - name: Portraits
-        widget: text
-        required: false
-      - name: Automotive
-        widget: text
-        required: false
-      - name: Lifestyle
-        widget: text
-        required: false
-      - name: Sports
-        widget: text
-        required: false
-      - name: Film
-        widget: text
-        required: false
     - name: categories
       widget: hidden
     - name: services
@@ -131,3 +113,69 @@ collections:
     - name: cover
       widget: hidden
       required: false
+    - name: pages
+      widget: hidden
+      required: false
+  - name: categories
+    label: Categories
+    file: data/categories.json
+    format: json
+    description: Rename, reorder, add or remove categories. Photos stay linked when you rename one.
+    fields:
+    - name: cats
+      label: Categories
+      label_singular: Category
+      widget: list
+      collapsed: true
+      summary: '{{fields.name}}'
+      fields:
+      - name: id
+        widget: hidden
+        default: '{{uuid_short}}'
+      - name: name
+        label: Name
+        widget: string
+        hint: Shown on the filters, cards and category page, e.g. Street photography
+      - name: icon
+        label: Icon
+        widget: select
+        options:
+        - label: Person
+          value: Portraits
+        - label: Car
+          value: Automotive
+        - label: Coffee cup
+          value: Lifestyle
+        - label: Ball
+          value: Sports
+        - label: Film camera
+          value: Film
+        - label: Photo camera
+          value: camera
+        - label: City / street
+          value: city
+        - label: Mountains / nature
+          value: mountain
+        - label: Heart / weddings
+          value: heart
+        - label: Music / concerts
+          value: music
+        - label: Plane / travel
+          value: plane
+        - label: Sparkle / other
+          value: spark
+        default: camera
+      - name: what
+        label: Card text
+        widget: string
+        required: false
+        hint: One line under the name in “What I shoot”
+      - name: kind
+        label: Label
+        widget: string
+        required: false
+        hint: Small tag, e.g. Photo · Video
+      - name: description
+        label: Category page description
+        widget: text
+        required: false
