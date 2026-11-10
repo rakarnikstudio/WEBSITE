@@ -1,6 +1,48 @@
 {
   "items": [
     {
+      "src": "/photos/2.webp",
+      "cat": "lifestyle",
+      "title": "",
+      "cover": false,
+      "kind": "image"
+    },
+    {
+      "src": "/photos/1.webp",
+      "cat": "lifestyle",
+      "title": "",
+      "cover": false,
+      "kind": "image"
+    },
+    {
+      "src": "/photos/_DSC8872.webp",
+      "cat": "lifestyle",
+      "title": "",
+      "cover": false,
+      "kind": "image"
+    },
+    {
+      "src": "/photos/_DSC7940.webp",
+      "cat": "lifestyle",
+      "title": "",
+      "cover": false,
+      "kind": "image"
+    },
+    {
+      "src": "/photos/_DSC7499.webp",
+      "cat": "lifestyle",
+      "title": "",
+      "cover": false,
+      "kind": "image"
+    },
+    {
+      "src": "/photos/_DSC8409.webp",
+      "cat": "lifestyle",
+      "title": "",
+      "cover": false,
+      "kind": "image"
+    },
+    {
       "src": "/photos/_DSC9771.webp",
       "cat": "portraits",
       "title": "",
@@ -472,13 +514,6 @@
     "instagram": "nik_rakar",
     "available": true
   },
-  "pages": {
-    "Portraits": "Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us.",
-    "Automotive": "Cars in motion and at rest: rolling shots, statics, details and car meets, on stills and on video.",
-    "Lifestyle": "Everyday moments and brand content. Real people in real places, made for social media and campaigns.",
-    "Sports": "Action, teams and match days. Peak moments and the energy around the game.",
-    "Film": "Short films, reels and edits, from planning the shots to the final cut."
-  },
   "categories": [
     "Portraits",
     "Automotive",
@@ -513,5 +548,12 @@
       "kind": "Video"
     }
   ],
-  "cover": null
+  "cover": null,
+  "pages": {
+    "Portraits": "Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us.",
+    "Automotive": "Cars in motion and at rest: rolling shots, statics, details and car meets, on stills and on video.",
+    "Lifestyle": "Everyday moments and brand content. Real people in real places, made for social media and campaigns.",
+    "Sports": "Action, teams and match days. Peak moments and the energy around the game.",
+    "Film": "Short films, reels and edits, from planning the shots to the final cut."
+  }
 }
