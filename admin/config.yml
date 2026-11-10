@@ -17,9 +17,9 @@ media_libraries:
       transformations:
         raster_image:
           format: webp
-          quality: 85
-          width: 2400
-          height: 2400
+          quality: 90
+          width: 4000
+          height: 4000
 collections:
 - name: portfolio
   label: Portfolio
@@ -42,7 +42,7 @@ collections:
       - name: src
         label: Photo
         widget: image
-        hint: JPG, about 2400 px on the long side is ideal
+        hint: Any size JPG or PNG; it is saved at up to 4000 px
       - name: cat
         label: Category
         widget: relation
