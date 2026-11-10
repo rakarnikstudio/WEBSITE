@@ -13,7 +13,7 @@ public_folder: /photos
 media_libraries:
   default:
     config:
-      max_file_size: 30000000
+      max_file_size: 95000000
       transformations:
         raster_image:
           format: webp
@@ -30,54 +30,94 @@ collections:
     label: Photos & details
     file: data/site.json
     format: json
-    description: Add, remove and reorder photos, then press Save. Your About text and contact details are further down.
+    description: Add, remove and reorder photos and videos, then press Save. Your About text and contact details are further down.
     fields:
     - name: items
-      label: Photos
-      label_singular: Photo
+      label: Photos & videos
+      label_singular: Item
       widget: list
       add_to_top: true
       summary: '{{fields.title}}'
-      fields:
-      - name: src
-        label: Photo
-        widget: image
-        hint: Any size JPG or PNG; it is saved at up to 4000 px
-      - name: cat
-        label: Category
-        widget: relation
-        collection: portfolio
-        file: categories
-        value_field: cats.*.id
-        display_fields:
-        - cats.*.name
-        search_fields:
-        - cats.*.name
-        hint: Rename or add categories under Portfolio → Categories
-      - name: title
-        label: Title (optional)
-        widget: string
-        required: false
-      - name: cover
-        label: Use as the big cover photo
-        widget: boolean
-        default: false
-        required: false
-        hint: 'Only one photo can be the cover: turn this off on the old cover photo when you pick a new one'
-      - name: kind
-        widget: hidden
-        default: image
-      - name: thumb
-        widget: hidden
-        required: false
-      - name: w
-        widget: hidden
-        required: false
-      - name: h
-        widget: hidden
-        required: false
       collapsed: true
       thumbnail: src
+      typeKey: kind
+      types:
+      - name: image
+        label: Photo
+        widget: object
+        summary: '{{fields.title}}'
+        fields:
+        - name: src
+          label: Photo
+          widget: image
+          hint: Any size JPG or PNG; it is saved at up to 4000 px
+        - &id001
+          name: cat
+          label: Category
+          widget: relation
+          collection: portfolio
+          file: categories
+          value_field: cats.*.id
+          display_fields:
+          - cats.*.name
+          search_fields:
+          - cats.*.name
+          hint: Rename or add categories under Portfolio → Categories
+        - &id002
+          name: title
+          label: Title (optional)
+          widget: string
+          required: false
+        - name: cover
+          label: Use as the big cover photo
+          widget: boolean
+          default: false
+          required: false
+          hint: 'Only one photo can be the cover: turn this off on the old cover photo when you pick a new one'
+        - name: thumb
+          widget: hidden
+          required: false
+        - name: w
+          widget: hidden
+          required: false
+        - name: h
+          widget: hidden
+          required: false
+      - name: video
+        label: Video file
+        widget: object
+        summary: '{{fields.title}}'
+        fields:
+        - name: src
+          label: Video
+          widget: file
+          media_folder: /videos
+          public_folder: /videos
+          accept: video/mp4,video/webm,video/quicktime
+          hint: MP4 works best. Keep it under 95 MB (best under 50 MB); for longer films use “Video link” instead
+        - name: poster
+          label: Cover image (optional)
+          widget: image
+          required: false
+          hint: The still shown on the grid before the video plays
+        - *id001
+        - *id002
+      - name: link
+        label: Video link (YouTube / Vimeo)
+        widget: object
+        summary: '{{fields.title}}'
+        fields:
+        - name: url
+          label: YouTube or Vimeo link
+          widget: string
+          hint: Paste the link from the address bar or the Share button, e.g. https://youtu.be/…
+        - name: poster
+          label: Cover image (optional)
+          widget: image
+          required: false
+          hint: 'Optional: YouTube makes one automatically'
+        - *id001
+        - *id002
     - name: profile
       label: Your details
       widget: object

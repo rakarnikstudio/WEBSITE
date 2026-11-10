@@ -296,6 +296,11 @@ a.svc{text-decoration:none;color:inherit;cursor:pointer}
 .more{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
 .more:empty{display:none}
 .morelink{transition:transform .35s var(--spring),background .2s}
+/* video links */
+.lbframe{border:0;width:min(100%,calc((100vh - 220px) * 16 / 9));height:auto;aspect-ratio:16/9;max-height:100%;background:#000}
+.lbframe.vert{width:auto;height:100%;aspect-ratio:9/16;max-width:100%}
+.vposter{display:grid;place-items:center;aspect-ratio:16/9;width:100%;background:var(--soft)}
+.vposter.sm{aspect-ratio:auto;height:100%;font-size:14px}
 .morelink{display:flex;align-items:center;gap:14px;padding:12px 18px 12px 12px;border-radius:var(--r-md);text-decoration:none;text-align:left;min-width:0}
 .morelink>span:nth-child(2){flex:1;min-width:0}
 .morelink .mono{display:block;color:var(--mute)}
@@ -565,7 +570,7 @@ let PICKS = null;
 function shuffle(a){ for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function picks(fresh){
   if (fresh || !PICKS || PICKS.some(p => !S.items.includes(p))) {
-    const pool = shuffle(S.items.filter(it => it.kind !== "link" && !(it.src && it.src === S.coverSrc) && !(it.id && it.id === S.cover)));
+    const pool = shuffle(S.items.filter(it => showable(it) && !(it.src && it.src === S.coverSrc) && !(it.id && it.id === S.cover)));
     const by = {}; pool.forEach(it => (by[it.cat] = by[it.cat] || []).push(it));
     const cats = shuffle(Object.keys(by)); PICKS = [];
     while (PICKS.length < 5 && cats.some(c => by[c].length)) for (const c of cats) if (by[c].length && PICKS.length < 5) PICKS.push(by[c].shift());
@@ -612,8 +617,24 @@ function render(){
   if (editing) { const cur = upCatVal(); $("upCat").innerHTML = S.categories.map(k => `<option${k===cur?" selected":""}>${esc(k)}</option>`).join(""); }
 }
 
+/* video links: YouTube and Vimeo play right on the site */
+function embedOf(it){
+  if (!it || it.kind !== "link" || !it.url) return null;
+  let u; try { u = new URL(it.url); } catch { return null; }
+  const h = u.hostname.replace(/^www\.|^m\./, "");
+  let id = null;
+  if (h === "youtu.be") id = u.pathname.slice(1).split("/")[0];
+  else if (h.endsWith("youtube.com")) id = u.searchParams.get("v") || (u.pathname.match(/\/(shorts|embed|live)\/([^/?#]+)/) || [])[2];
+  if (id) return {embed: `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`, poster: it.poster || `https://i.ytimg.com/vi/${id}/hqdefault.jpg`, vertical: /\/shorts\//.test(u.pathname)};
+  const v = h.endsWith("vimeo.com") && (u.pathname.match(/\/(\d+)/) || [])[1];
+  if (v) return {embed: `https://player.vimeo.com/video/${v}?autoplay=1&dnt=1`, poster: it.poster || "", vertical: false};
+  return null;
+}
+const posterOf = it => it.poster ? (/^(https?:|\/)/.test(it.poster) ? it.poster : "/" + it.poster) : "";
+const showable = it => it.kind !== "link" || !!embedOf(it);
 function media(it, opts = {}){
-  if (it.kind === "video") return `<video src="${src(it)}" muted playsinline loop preload="metadata"${opts.auto?" autoplay":""}></video>`;
+  if (it.kind === "link") { const e = embedOf(it), p = e && e.poster ? (/^(https?:|\/)/.test(e.poster) ? e.poster : "/" + e.poster) : ""; return p ? `<img src="${esc(p)}" alt="${esc(it.title || "Video")}" loading="lazy" decoding="async" style="aspect-ratio:16/9;object-fit:cover;width:100%;background:var(--soft)" onload="this.classList.add('ok')" onerror="this.classList.add('ok')">` : `<span class="vposter">${gi("play","lg")}</span>`; }
+  if (it.kind === "video") return `<video src="${src(it)}#t=0.1"${posterOf(it) ? ` poster="${esc(posterOf(it))}"` : ""} muted playsinline loop preload="metadata"${opts.auto?" autoplay":""}></video>`;
   const wh = it.w && it.h ? ` width="${it.w}" height="${it.h}"` : "";
   return `<img src="${opts.full ? src(it) : thumbOf(it)}"${wh} alt="${esc(it.title || it.cat + " photo by " + S.profile.name)}" loading="${opts.eager?"eager":"lazy"}" decoding="async" onload="this.classList.add('ok')">`;
 }
@@ -652,11 +673,11 @@ function renderWall(){
   W().innerHTML = list.map(it => {
     const i = S.items.indexOf(it);
     let inner;
-    if (it.kind === "link") {
+    if (it.kind === "link" && !embedOf(it)) {
       let host = ""; try { host = new URL(it.url).hostname.replace(/^www\./,""); } catch {}
       inner = `<a class="linktile glass hov" href="${esc(it.url)}" target="_blank" rel="noopener"><span class="top">${gi(it.cat,"md")}<span class="mono">${esc(it.cat)} · Video</span></span><b>${esc(it.title || "Watch the film")}</b><span class="row"><span class="mono">${esc(host)}</span><span class="go">↗</span></span></a>`;
     } else {
-      inner = `<button class="hit" type="button" data-open="${i}" aria-label="Open ${esc(it.title || it.cat)}">${media(it)}${it.kind==="video"?`<span class="play glass">${gi("play","sm")}Video</span>`:""}<span class="ov glass"><span class="l">${gi(it.cat,"sm")}<b>${esc(it.title || it.cat)}</b></span></span></button>`;
+      inner = `<button class="hit" type="button" data-open="${i}" aria-label="Open ${esc(it.title || it.cat)}">${media(it)}${it.kind==="video"||it.kind==="link"?`<span class="play glass">${gi("play","sm")}Video</span>`:""}<span class="ov glass"><span class="l">${gi(it.cat,"sm")}<b>${esc(it.title || it.cat)}</b></span></span></button>`;
     }
     let ed = "";
     if (editing) {
@@ -736,17 +757,18 @@ function thumbFor(it){
   const c = $("coverEl"); return (c && ((it.id && S.cover === it.id) || (it.src && S.coverSrc === it.src))) ? c.querySelector("img,video") : null;
 }
 function openLb(i, fromCover){
-  lbList = (fromCover ? S.items : visible()).filter(x => x.kind !== "link");
+  lbList = (fromCover ? S.items : visible()).filter(showable);
   lbPos = Math.max(0, lbList.indexOf(S.items[i]));
   lbFromEl = thumbFor(S.items[i]);
   const lb = $("lb"); lb.classList.remove("closing"); lb.classList.toggle("single", lbList.length < 2);
   lb.hidden = false; document.body.style.overflow = "hidden";
-  $("lbStrip").innerHTML = lbList.map((it, n) => `<button type="button" data-k="${n}" aria-label="Show ${n+1}">${it.kind==="video"?`<video src="${src(it)}" muted preload="metadata"></video>`:`<img src="${thumbOf(it)}" alt="" loading="lazy" decoding="async">`}</button>`).join("");
+  $("lbStrip").innerHTML = lbList.map((it, n) => `<button type="button" data-k="${n}" aria-label="Show ${n+1}">${it.kind==="video"?`<video src="${src(it)}#t=0.1" muted preload="metadata"></video>`:it.kind==="link"?(embedOf(it).poster?`<img src="${esc(embedOf(it).poster)}" alt="" loading="lazy">`:`<span class="vposter sm">▶</span>`):`<img src="${thumbOf(it)}" alt="" loading="lazy" decoding="async">`}</button>`).join("");
   showLb(0, true); $("lbClose").focus();
 }
 function slideHTML(it){
+  if (it.kind === "link") { const e = embedOf(it); return `<iframe class="lbm lbframe${e.vertical ? " vert" : ""}" src="${e.embed}" title="${esc(it.title || "Video")}" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>`; }
   return it.kind === "video"
-    ? `<video class="lbm" src="${src(it)}" controls autoplay playsinline></video>`
+    ? `<video class="lbm" src="${src(it)}"${posterOf(it) ? ` poster="${esc(posterOf(it))}"` : ""} controls autoplay playsinline></video>`
     : `<img class="lbm" src="${src(it)}" alt="${esc(it.title || it.cat)}" decoding="async">`;
 }
 function flip(fromEl, m, reverse, done){
