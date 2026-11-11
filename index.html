@@ -1362,11 +1362,27 @@ $("enq").addEventListener("submit", async e => {
   if (useEJ) {
     try {
       const first = (v.name || "").trim().split(/\s+/)[0] || "";
-      const fill = t => String(t || "").replace(/\{name\}/g, first).replace(/\{shoot\}/g, v.type === "__other" ? ((v.other || "").trim() || tr("your project", "vaš projekt")) : (v.type || tr("your project", "vaš projekt")));
-      const rs = fill(L(ej, "reply_subject") || tr("Thanks for your enquiry, {name}", "Hvala za vaše povpraševanje, {name}"));
-      const rb = fill(L(ej, "reply_body") || "");
+      /* the reply carries both languages: the visitor's language first, the other one below */
+      const shootIn = lg => {
+        if (v.type === "__other") return (v.other || "").trim() || (lg === "sl" ? "vaš projekt" : "your project");
+        const k = S.categories.find(c => c === v.type || (S.catSl && S.catSl[c] === v.type));
+        if (k) return lg === "sl" ? ((S.catSl && S.catSl[k]) || k) : k;
+        const pk = (B.packages || []).find(x => x && (x.name === v.type || x.name_sl === v.type));
+        if (pk) return lg === "sl" ? (pk.name_sl || pk.name) : pk.name;
+        const fixed = [["Brand content (photo + video)", "Vsebina za znamko (foto + video)"], ["Event", "Dogodek"]].find(x => x.includes(v.type));
+        return fixed ? fixed[lg === "sl" ? 1 : 0] : (v.type || (lg === "sl" ? "vaš projekt" : "your project"));
+      };
+      const fillIn = (t, lg) => String(t || "").replace(/\{name\}/g, first).replace(/\{shoot\}/g, shootIn(lg));
+      const subj = lg => fillIn(lg === "sl" ? (ej.reply_subject_sl || "Hvala za vaše povpraševanje, {name}") : (ej.reply_subject || "Thanks for your enquiry, {name}"), lg);
+      const body = lg => fillIn(lg === "sl" ? ej.reply_body_sl : ej.reply_body, lg);
+      const order = LANG === "sl" ? ["sl", "en"] : ["en", "sl"];
+      const rs = subj(order[0]) + " · " + subj(order[1]).replace(/,\s*[^,]*$/, "");
+      const rb = order.map(body).filter(Boolean).join("\n\n————————\n\n");
+      const block = lg => body(lg) ? `<div lang="${lg}">${esc(body(lg)).replace(/\n/g, "<br>")}</div>` : "";
+      const rh = body(order[0]) || body(order[1]) ? `<img src="https://rakarnik.digital/email-logo.png" width="56" height="66" alt="Nik Rakar" style="display:block;margin:0 0 18px;border:0">`
+        + order.map(block).filter(Boolean).join(`<hr style="border:0;border-top:1px solid #E5E4E2;margin:28px 0">`) : "";
       const params = {subject, name: v.name, email: v.email, shoot: enqKind(v), date: v.date || "-", location: v.where || "-", message: (v.msg || "").trim() || "-", language: fields.Language,
-        reply_subject: rs, reply_message: rb, reply_html: esc(rb).replace(/\n/g, "<br>")};
+        reply_subject: rs, reply_message: rb, reply_html: rh};
       const r = await ejSend(ej.emailjs_notify, params, ctl.signal);
       ok = r.ok;
       if (ok && ej.emailjs_reply && rb) { try { await ejSend(ej.emailjs_reply, params); } catch {} }
