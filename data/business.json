@@ -24,8 +24,8 @@
    "featured": false,
    "desc": "Statics and rolling shots for owners, dealers and car clubs.",
    "desc_sl": "Statični posnetki in posnetki v vožnji za lastnike, prodajalce in klube.",
-   "includes": "Location scouting\nStatic and rolling shots\nEdited photos ready for social and print\nOptional short reel",
-   "includes_sl": "Iskanje lokacije\nStatični posnetki in posnetki v vožnji\nObdelane fotografije za splet in tisk\nPo želji kratek video"
+   "includes": "Location scouting\nStatic and rolling shots\nEdited photos ready for social and print\nOptional cinematic 16:9 video",
+   "includes_sl": "Iskanje lokacije\nStatični posnetki in posnetki v vožnji\nObdelane fotografije za splet in tisk\nPo želji filmski video v razmerju 16:9"
   },
   {
    "name": "Brand content (photo + video)",
@@ -33,10 +33,10 @@
    "icon": "Film",
    "price": "",
    "featured": false,
-   "desc": "Photos and short videos for your brand's social media, website and ads.",
-   "desc_sl": "Fotografije in kratki videi za družbena omrežja, spletno stran in oglase tvoje znamke.",
-   "includes": "Shot list planned together\nPhoto and video on the same day\nVertical reels and edited photos\nReady to post on your channels",
-   "includes_sl": "Seznam posnetkov načrtujeva skupaj\nFoto in video na isti dan\nPokončni videi in obdelane fotografije\nPripravljeno za objavo na tvojih kanalih"
+   "desc": "Photos and cinematic 16:9 video for your brand's website, ads and campaigns.",
+   "desc_sl": "Fotografije in filmski video v razmerju 16:9 za spletno stran, oglase in kampanje tvoje znamke.",
+   "includes": "Shot list planned together\nCinematic 16:9 video\nEdited, high-resolution photos\nReady for your website and channels",
+   "includes_sl": "Seznam posnetkov načrtujeva skupaj\nFilmski video v razmerju 16:9\nObdelane fotografije v visoki ločljivosti\nPripravljeno za tvojo spletno stran in kanale"
   },
   {
    "name": "Events & sport",
@@ -100,12 +100,6 @@
    "q_sl": "Lahko fotografije uporabim za svojo znamko?",
    "a": "Yes. Where and how you can use them is agreed in the quote, so everything is clear upfront.",
    "a_sl": "Da. Kje in kako jih lahko uporabiš, se dogovoriva v ponudbi, da je vse jasno vnaprej."
-  },
-  {
-   "q": "Can you shoot photo and video at the same time?",
-   "q_sl": "Lahko hkrati fotografiraš in snemaš?",
-   "a": "Yes. I can do both on the same shoot, so your photos and videos match.",
-   "a_sl": "Da. Na istem snemanju lahko naredim oboje, zato se fotografije in video ujemajo."
   }
  ],
  "brands": [],
