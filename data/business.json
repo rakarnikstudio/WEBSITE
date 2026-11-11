@@ -108,7 +108,18 @@
    "a_sl": "Moje glavno področje je fotografija. Snemanje videa je mogoče dodati, vendar hkratno snemanje in fotografiranje zahteva dodatnega fotografa, zato video obračunam posebej. Sporočite mi, kaj potrebujete, in skupaj bomo našli najboljšo rešitev za vaš projekt."
   }
  ],
- "brands": [],
+ "brands": [
+  {
+   "name": "RCN Nepremičnine",
+   "logo": "/photos/brands/rcn-nepremicnine.svg",
+   "url": ""
+  },
+  {
+   "name": "32 Drift Squadron",
+   "logo": "/photos/brands/32-drift-squadron.png",
+   "url": ""
+  }
+ ],
  "quotes": [],
  "cases": [],
  "contact": {
