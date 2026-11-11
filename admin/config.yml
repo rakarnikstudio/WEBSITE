@@ -538,6 +538,11 @@ collections:
       widget: object
       collapsed: true
       fields:
+      - name: form_key
+        label: Web3Forms access key
+        widget: string
+        required: false
+        hint: From web3forms.com. Makes the contact form send instantly. Leave empty to use FormSubmit
       - name: whatsapp
         label: WhatsApp number (optional)
         widget: string

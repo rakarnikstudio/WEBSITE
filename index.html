@@ -1352,12 +1352,20 @@ $("enq").addEventListener("submit", async e => {
   const btn = f.querySelector('[type="submit"]'), label = btn.innerHTML;
   btn.disabled = true; btn.textContent = tr("Sending…", "Pošiljam …");
   let ok = false;
+  const slow = setTimeout(() => { btn.textContent = tr("Still sending…", "Še pošiljam …"); }, 5000);
+  const ctl = new AbortController(), stop = setTimeout(() => ctl.abort(), 20000);
+  const fields = {Name: v.name, Email: v.email, Shoot: enqKind(v), Date: v.date || "-", Location: v.where || "-", Message: (v.msg || "").trim() || "-", Language: LANG === "sl" ? "Slovenian" : "English"};
+  const key = String((B.contact && B.contact.form_key) || "").trim();
   try {
-    const r = await fetch(`https://formsubmit.co/ajax/${String(to).replace(/[^\w@.+-]/g, "")}`, {method:"POST", headers:{"Content-Type":"application/json", Accept:"application/json"},
-      body: JSON.stringify({_subject: subject, _template: "table", _captcha: "false", _replyto: v.email, Name: v.name, Email: v.email, Shoot: enqKind(v), Date: v.date || "-", Location: v.where || "-", Message: (v.msg || "").trim() || "-", Language: LANG === "sl" ? "Slovenian" : "English"})});
+    const r = key
+      ? await fetch("https://api.web3forms.com/submit", {method:"POST", signal:ctl.signal, headers:{"Content-Type":"application/json", Accept:"application/json"},
+          body: JSON.stringify(Object.assign({access_key: key, subject, from_name: "rakarnik.digital", replyto: v.email, botcheck: ""}, fields))})
+      : await fetch(`https://formsubmit.co/ajax/${String(to).replace(/[^\w@.+-]/g, "")}`, {method:"POST", signal:ctl.signal, headers:{"Content-Type":"application/json", Accept:"application/json"},
+          body: JSON.stringify(Object.assign({_subject: subject, _template: "table", _captcha: "false", _replyto: v.email}, fields))});
     const j = await r.json().catch(() => ({}));
     ok = r.ok && String(j.success) === "true";
   } catch {}
+  clearTimeout(slow); clearTimeout(stop);
   btn.disabled = false; btn.innerHTML = label;
   if (ok) {
     f.reset(); otherToggle();
