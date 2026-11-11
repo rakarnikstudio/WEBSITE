@@ -682,11 +682,15 @@ async function liveData(path = "data/site.json"){
     const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}?ref=main`, {headers, cache:"no-store", signal:ctl.signal});
     clearTimeout(t);
     if (r.status === 304 && c) return c.data;
-    if (!r.ok) return null;
+    if (!r.ok) return await rawData(path);
     const data = await r.json(), etag = r.headers.get("ETag");
     if (etag) { try { localStorage.setItem(key, JSON.stringify({etag, data})); } catch {} }
     return data;
   } catch { return null; }
+}
+/* backup when GitHub's lookup allowance is used up: the raw file (can be a few minutes behind) */
+async function rawData(path){
+  try { const r = await fetch(`https://raw.githubusercontent.com/${REPO}/main/${path}?t=${Date.now()}`, {cache:"no-store"}); return r.ok ? await r.json() : null; } catch { return null; }
 }
 /* A photo added seconds ago may not be published yet: load it straight from GitHub until it is */
 addEventListener("error", e => {
