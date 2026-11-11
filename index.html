@@ -474,6 +474,15 @@ html,body{cursor:var(--cur-arrow)}
 @media (max-width:440px){.navbar .links a .arr{display:none}}
 @media (max-width:370px){.navbar .links{gap:0}.navbar .links a{padding-left:5px;padding-right:5px;font-size:13px}.navbar .lang{padding:6px 7px}}
 @media (max-width:520px){.navbar .links{gap:2px}.navbar .links a{padding-left:8px;padding-right:8px;font-size:14px}.navbar .links a.nm{display:none}}
+/* separate pages */
+.pgoff{display:none!important}
+.navbar .links a[data-nav].on{color:var(--fg);font-weight:700}
+.nextband{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.nextcard{border-radius:var(--r-md);padding:22px;display:grid;gap:8px;text-decoration:none;min-height:110px;align-content:space-between}
+.nextcard .mono{font-size:11px;color:var(--mute)}
+.nextcard b{font-size:clamp(22px,2.4vw,30px);letter-spacing:-.035em;line-height:1}
+.nextcard.here{display:none}
+main#home.sub{padding-top:clamp(28px,6vw,64px)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 
@@ -485,14 +494,14 @@ html,body{cursor:var(--cur-arrow)}
   <header class="navbar glass">
     <a class="brand" href="#top" aria-label="Back to top"><span class="face" aria-hidden="true"></span><span class="bt" id="brandName">Nik Rakar</span></a>
     <nav class="links" aria-label="Sections">
-      <a href="#work" data-t="nav.work">Work</a><a href="#about" class="nm" data-t="nav.about">About</a><a href="#contact" data-t="nav.contact">Contact</a>
+      <a href="#work" class="nm" data-t="nav.work" data-nav="home">Work</a><a href="#about" data-t="nav.about" data-nav="about">About</a><a href="#services" data-t="nav.services" data-nav="services">Services</a><a href="#contact" data-t="nav.contact" data-nav="contact">Contact</a>
       <button class="lang hov" id="langBtn" type="button" aria-label="Slovenščina / English">SLO</button>
       <button class="round hov" id="theme" type="button" aria-label="Switch black / white"><span class="gi" style="--h:48" data-ic="sun"></span></button>
     </nav>
   </header>
 
   <main id="home">
-  <section class="mast" id="top">
+  <section class="mast" id="top" data-pg="home">
     <h1 class="logo" id="logo"><span id="lw1">Nik</span><span class="face" aria-hidden="true"></span><span id="lw2">Rakar</span></h1>
     <p class="role" id="role">Photographer &amp; cinematographer</p>
     <div class="eyebrow">
@@ -502,14 +511,14 @@ html,body{cursor:var(--cur-arrow)}
     </div>
   </section>
 
-  <div id="coverSlot"></div>
+  <div id="coverSlot" data-pg="home"></div>
 
-  <section class="sec" id="reel" hidden>
+  <section class="sec" id="reel" data-pg="home" hidden>
     <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:12" data-ic="play"></span><div><h2 data-t="reel.h">Showreel</h2><p class="sub" data-t="reel.sub">My best shots, in motion</p></div></div></div>
     <div class="reelbox glass" id="reelBox"></div>
   </section>
 
-  <section class="sec" id="work">
+  <section class="sec" id="work" data-pg="home">
     <div class="sh">
       <div class="ttl"><span class="gi lg hov" style="--h:330" data-ic="camera"></span><div><h2 data-t="work.h">Selected work</h2><p class="sub" id="workSub" data-t="work.sub">Portraits, cars, street and sport</p></div></div>
       <div class="seg glass" id="chips" role="tablist" aria-label="Filter by category"></div>
@@ -518,7 +527,7 @@ html,body{cursor:var(--cur-arrow)}
     <div class="more" id="moreLinks"></div>
   </section>
 
-  <section class="sec" id="about">
+  <section class="sec" id="about" data-pg="about">
     <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:42" data-ic="Portraits"></span><div><h2 data-t="about.h">About</h2><p class="sub" data-t="about.sub">Who's behind the camera</p></div></div></div>
     <div class="about glass">
       <figure class="aphoto" id="aPhoto"><img id="aImg" alt="Nik Rakar with his camera on a gimbal" loading="lazy" decoding="async"><figcaption class="glass mono" data-t="about.cap">Behind the camera</figcaption></figure>
@@ -536,33 +545,41 @@ html,body{cursor:var(--cur-arrow)}
     <div class="svcs" id="svc"></div>
   </section>
 
-  <section class="sec" id="cases" hidden>
+  <section class="sec" id="cases" data-pg="home" hidden>
     <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:205" data-ic="spark"></span><div><h2 data-t="cases.h">Projects</h2><p class="sub" data-t="cases.sub">Client work, from the brief to the result</p></div></div></div>
     <div class="cases" id="caseList"></div>
   </section>
 
-  <section class="sec" id="prices" hidden>
+  <section class="sec" id="prices" data-pg="services" hidden>
     <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:140" data-ic="camera"></span><div><h2 data-t="prices.h">Services</h2><p class="sub" data-t="prices.sub">What I can shoot for you. Every shoot is planned around you</p></div></div></div>
     <div class="pkgs" id="pkgs"></div>
   </section>
 
-  <section class="sec" id="process" hidden>
+  <section class="sec" id="process" data-pg="services" hidden>
     <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:45" data-ic="pencil"></span><div><h2 data-t="process.h">How it works</h2><p class="sub" data-t="process.sub">From the first message to the final files</p></div></div></div>
     <ol class="steps" id="steps"></ol>
   </section>
 
-  <section class="sec" id="clients" hidden>
+  <section class="sec" id="clients" data-pg="about" hidden>
     <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:330" data-ic="heart"></span><div><h2 data-t="clients.h">Worked with</h2><p class="sub" data-t="clients.sub">Brands and people I've shot for</p></div></div></div>
     <div class="brands" id="brands"></div>
     <div class="quotes" id="quotes"></div>
   </section>
 
-  <section class="sec" id="faq" hidden>
+  <section class="sec" id="faq" data-pg="services" hidden>
     <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:200" data-ic="mail"></span><div><h2 data-t="faq.h">FAQ</h2><p class="sub" data-t="faq.sub">Quick answers before you book</p></div></div></div>
     <div class="faqs" id="faqs"></div>
   </section>
 
-  <section class="sec" id="contact">
+  <section class="sec" id="next" data-pg="home about services">
+    <div class="nextband">
+      <a class="nextcard glass hov" href="#contact" id="nxContact"><span class="mono" data-t="nx.k1">Have an idea?</span><b data-t="nx.contact">Let's shoot →</b></a>
+      <a class="nextcard glass hov" href="#about" id="nxAbout"><span class="mono" data-t="nx.k2">Who's behind the camera</span><b data-t="nx.about">About me →</b></a>
+      <a class="nextcard glass hov" href="#services" id="nxServices"><span class="mono" data-t="nx.k3">What I shoot and how</span><b data-t="nx.services">Services →</b></a>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" data-pg="contact">
     <div class="contact glass">
       <h2 data-t="contact.h">Let's shoot</h2>
       <p class="note" data-t="contact.note">Tell me what you have in mind, where and when, and I'll get back to you with ideas. We'll agree on the price together, based on your project.</p>
@@ -1174,6 +1191,22 @@ function go(){
   const was = route;
   route = k;
   const wasCase = caseRoute;
+  /* pages: home, about, services, contact. Any id on a page opens that page (old links like #faq keep working) */
+  const el = !k && h ? document.getElementById(h) : null;
+  const pgOf = el && el.closest("[data-pg]");
+  const pg = !k && (PAGES.includes(h) ? h : (pgOf ? pgOf.dataset.pg.split(" ")[0] : "home"));
+  const wasPg = curPage;
+  if (pg) {
+    curPage = pg;
+    document.querySelectorAll("#home [data-pg]").forEach(x => x.classList.toggle("pgoff", !x.dataset.pg.split(" ").includes(pg)));
+    $("home").classList.toggle("sub", pg !== "home");
+    document.querySelectorAll(".navbar [data-nav]").forEach(a => a.classList.toggle("on", a.dataset.nav === pg && pg !== "home"));
+    ["Contact","About","Services"].forEach(n => $("nx" + n).classList.toggle("here", n.toLowerCase() === pg));
+    if (wasPg !== pg || el) requestAnimationFrame(() => {
+      const first = [...document.querySelectorAll("#home [data-pg]")].find(x => !x.classList.contains("pgoff") && x.offsetHeight);
+      if (!el || el === first || el.id === "top") scrollTo({top:0, behavior:"instant"}); else el.scrollIntoView();
+    });
+  }
   const cs = !k && h.startsWith("case-") ? (B.cases || []).find(c => "case-" + caseSlug(c) === h) || null : null;
   caseRoute = cs;
   $("home").hidden = !!k || !!cs; $("catPage").hidden = !k; $("casePage").hidden = !cs;
@@ -1189,7 +1222,8 @@ function go(){
 addEventListener("hashchange", go);
 
 /* ---------- client features: Slovenian version, showreel, projects, prices, process, clients, FAQ, enquiry form ---------- */
-let B = {}, caseRoute = null;
+let B = {}, caseRoute = null, curPage = null, pendingPkg = null;
+const PAGES = ["about", "services", "contact"];
 let LANG = (() => { try { const v = localStorage.getItem("lang"); if (v === "sl" || v === "en") return v; } catch {} return /^sl/i.test(navigator.language || "") ? "sl" : "en"; })();
 const tr = (en, sl) => (LANG === "sl" && sl) ? sl : en;
 const L = (o, f) => !o ? "" : (LANG === "sl" && o[f + "_sl"]) ? o[f + "_sl"] : (o[f] || "");
@@ -1199,7 +1233,7 @@ const asset = u => !u ? "" : /^(https?:|\/|data:)/.test(u) ? u : "/" + u;
 const caseSlug = c => String(c.slug || c.title || "project").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const waNum = () => String((B.contact && B.contact.whatsapp) || "").replace(/[^\d]/g, "");
 const SL = {
-  "nav.work":"Delo","nav.about":"O meni","nav.prices":"Cene","nav.contact":"Kontakt","nav.gal":"Galerije<span class=\"arr\"> ↗</span>",
+  "nav.work":"Delo","nav.about":"O meni","nav.services":"Storitve","nav.prices":"Cene","nav.contact":"Kontakt","nav.gal":"Galerije<span class=\"arr\"> ↗</span>",
   "pill.pv":"Foto in video","pill.avail":"Na voljo za snemanja",
   "reel.h":"Showreel","reel.sub":"Moji najboljši posnetki v gibanju",
   "work.h":"Izbrano delo","work.sub":"Portreti, avtomobili, ulica in šport",
@@ -1212,7 +1246,7 @@ const SL = {
   "faq.h":"Pogosta vprašanja","faq.sub":"Hitri odgovori pred rezervacijo",
   "contact.h":"Imaš idejo? Pošlji mi sporočilo.","contact.note":"Povej mi, kaj imaš v mislih, kje in kdaj, in odgovoril ti bom z idejami. Ceno prilagodiva tvojemu projektu.",
   "fm.name":"Tvoje ime","fm.email":"Tvoj e-naslov","fm.type":"Kaj potrebuješ?","fm.date":"Datum (če ga že veš)","fm.where":"Lokacija","fm.msg":"Povej mi več","fm.other":"Kaj točno potrebuješ?",
-  "case.back":"Vsi projekti","foot.gal":"Galerije za stranke ↗","case.cta":"Načrtujva podobno snemanje →","cat.back":"Vse delo"
+  "case.back":"Vsi projekti","nx.k1":"Imaš idejo?","nx.contact":"Posnemiva →","nx.k2":"Kdo je za kamero","nx.about":"O meni →","nx.k3":"Kaj snemam in kako","nx.services":"Storitve →","foot.gal":"Galerije za stranke ↗","case.cta":"Načrtujva podobno snemanje →","cat.back":"Vse delo"
 };
 function applyLang(){
   document.documentElement.lang = LANG;
@@ -1295,9 +1329,7 @@ function renderPkgs(){
 document.addEventListener("click", e => {
   const a = e.target.closest("[data-pkg]"); if (!a) return;
   const x = (B.packages || []).filter(x => x && x.name)[+a.dataset.pkg]; if (!x) return;
-  const sel = $("enqType"), v = L(x, "name");
-  if (![...sel.options].some(o => o.value === v)) sel.add(new Option(v, v), 0);
-  sel.value = v;
+  pendingPkg = L(x, "name");
   setTimeout(() => $("enq").querySelector('[name="name"]').focus({preventScroll:true}), 600);
 });
 
@@ -1335,7 +1367,9 @@ function renderForm(){
     + (ig ? `<button class="btn ghost lg" type="button" data-send="ig">${gi("social","sm")}${tr("Send on Instagram","Pošlji na Instagramu")}</button>` : "")
     + (wa ? `<button class="btn ghost lg" type="button" data-send="wa">${gi("social","sm")}WhatsApp</button>` : "")
     + `<span class="hint">${esc(L(B.contact || {}, "response") || tr("Goes straight to my inbox.", "Sporočilo pride naravnost k meni."))}</span>`;
-  enqFill(keep); otherToggle();
+  enqFill(keep);
+  if (pendingPkg) { const sel = $("enqType"); if (![...sel.options].some(o => o.value === pendingPkg)) sel.add(new Option(pendingPkg, pendingPkg), 0); sel.value = pendingPkg; pendingPkg = null; }
+  otherToggle();
 }
 function otherToggle(){ const on = $("enqType").value === "__other"; $("otherWrap").hidden = !on; return on; }
 $("enqType").addEventListener("change", () => { if (otherToggle()) $("enqOther").focus(); });
@@ -1444,6 +1478,7 @@ render = function(){
   _renderBase();
   renderReel(); renderCases(); renderPkgs(); renderSteps(); renderClients(); renderFaq(); renderForm(); renderCase();
   applyLang();
+  if (!route && !caseRoute && curPage && curPage !== "home") document.title = ({about: tr("About","O meni"), services: tr("Services","Storitve"), contact: tr("Contact","Kontakt")})[curPage] + " · " + (S.profile.name || "Nik Rakar");
 };
 
 /* ---------- boot ---------- */
@@ -1530,7 +1565,11 @@ addEventListener("hashchange", () => {
   const h = decodeURIComponent(location.hash.slice(1)).toLowerCase();
   const toCat = S.categories.find(c => slug(c) === h);
   const fromCat = route;
-  if (!toCat && !fromCat) return go();             // plain in-page jumps scroll normally
+  if (!toCat && !fromCat) {
+    const el = h && document.getElementById(h), pgEl = el && el.closest("[data-pg]");
+    const next = PAGES.includes(h) ? h : (pgEl ? pgEl.dataset.pg.split(" ")[0] : "home");
+    return next !== curPage ? document.startViewTransition(go) : go();
+  }
   let srcIcon = null, srcTitle = null;
   if (toCat) {
     const card = document.querySelector(`#svc a[href="#${slug(toCat)}"]`) && !document.getElementById("home").hidden ? document.querySelector(`#svc a[href="#${slug(toCat)}"]`) : null;
