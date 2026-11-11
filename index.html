@@ -671,11 +671,21 @@ function applyCats(list){
 /* Live data: GitHub's API returns the newest saved version instantly; the published copy is the fallback */
 const REPO = "rakarnikstudio/WEBSITE";
 async function liveData(path = "data/site.json"){
+  /* GitHub allows 60 lookups an hour per visitor; asking "has it changed?" with the last ETag
+     costs nothing when it hasn't, so repeat visits don't use up the allowance */
+  const key = "ld:" + path; let c = null;
+  try { c = JSON.parse(localStorage.getItem(key) || "null"); } catch {}
   try {
     const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 2500);
-    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}?ref=main&t=${Date.now()}`, {headers:{Accept:"application/vnd.github.raw+json"}, cache:"no-store", signal:ctl.signal});
+    const headers = {Accept:"application/vnd.github.raw+json"};
+    if (c && c.etag) headers["If-None-Match"] = c.etag;
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}?ref=main`, {headers, cache:"no-store", signal:ctl.signal});
     clearTimeout(t);
-    return r.ok ? await r.json() : null;
+    if (r.status === 304 && c) return c.data;
+    if (!r.ok) return null;
+    const data = await r.json(), etag = r.headers.get("ETag");
+    if (etag) { try { localStorage.setItem(key, JSON.stringify({etag, data})); } catch {} }
+    return data;
   } catch { return null; }
 }
 /* A photo added seconds ago may not be published yet: load it straight from GitHub until it is */
