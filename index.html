@@ -548,14 +548,13 @@ html,body{cursor:var(--cur-arrow)}
   <section class="sec" id="contact">
     <div class="contact glass">
       <h2 data-t="contact.h">Let's shoot</h2>
-      <p class="note" data-t="contact.note">Tell me what you have in mind, where and when, and I'll get back to you with ideas and a quote.</p>
+      <p class="note" data-t="contact.note">Tell me what you have in mind, where and when, and I'll get back to you with ideas. We'll agree on the price together, based on your project.</p>
       <form class="form" id="enq" novalidate>
         <label><span data-t="fm.name">Your name</span><input name="name" autocomplete="name" required></label>
         <label><span data-t="fm.email">Your email</span><input name="email" type="email" autocomplete="email" required></label>
         <label><span data-t="fm.type">What do you need?</span><select name="type" id="enqType"></select></label>
         <label><span data-t="fm.date">Date (if you know it)</span><input name="date" type="date"></label>
-        <label><span data-t="fm.where">Location</span><input name="where" placeholder="Ljubljana"></label>
-        <label><span data-t="fm.budget">Budget</span><select name="budget" id="enqBudget"></select></label>
+        <label class="full"><span data-t="fm.where">Location</span><input name="where" placeholder="Ljubljana"></label>
         <label class="full"><span data-t="fm.msg">Tell me more</span><textarea name="msg" id="enqMsg"></textarea></label>
         <div class="factions full" id="enqActions"></div>
       </form>
@@ -1191,8 +1190,8 @@ const SL = {
   "process.h":"Kako poteka","process.sub":"Od prvega sporočila do končnih datotek",
   "clients.h":"Sodelovanja","clients.sub":"Znamke in ljudje, s katerimi sem delal",
   "faq.h":"Pogosta vprašanja","faq.sub":"Hitri odgovori pred rezervacijo",
-  "contact.h":"Posnemiva","contact.note":"Povej mi, kaj imaš v mislih, kje in kdaj, in odgovoril ti bom z idejami in ponudbo.",
-  "fm.name":"Tvoje ime","fm.email":"Tvoj e-naslov","fm.type":"Kaj potrebuješ?","fm.date":"Datum (če ga že veš)","fm.where":"Lokacija","fm.budget":"Proračun","fm.msg":"Povej mi več",
+  "contact.h":"Posnemiva","contact.note":"Povej mi, kaj imaš v mislih, kje in kdaj, in odgovoril ti bom z idejami. Ceno prilagodiva tvojemu projektu.",
+  "fm.name":"Tvoje ime","fm.email":"Tvoj e-naslov","fm.type":"Kaj potrebuješ?","fm.date":"Datum (če ga že veš)","fm.where":"Lokacija","fm.msg":"Povej mi več",
   "case.back":"Vsi projekti","case.cta":"Načrtujva podobno snemanje →","cat.back":"Vse delo"
 };
 function applyLang(){
@@ -1304,14 +1303,12 @@ function renderFaq(){
 }
 
 /* enquiry form: writes the message for the visitor, then opens their email app, Instagram or WhatsApp */
-const BUDGETS = [["", "Not sure yet", "Še ne vem"], ["< €150", "Under €150", "Do 150 €"], ["€150–300", "€150–300", "150–300 €"], ["€300–600", "€300–600", "300–600 €"], ["€600+", "€600+", "600 € +"]];
 function enqValues(){ const f = $("enq"); return f.elements ? Object.fromEntries(new FormData(f)) : {}; }
 function enqFill(v){ const f = $("enq"); if (!f.elements) return; Object.entries(v || {}).forEach(([k, val]) => { const el = f.elements[k]; if (!el) return; if (el.tagName === "SELECT" && val && ![...el.options].some(o => o.value === val)) el.add(new Option(val, val), 0); el.value = val; }); }
 function renderForm(){
   const keep = enqValues();
   const types = [...S.categories.map(k => cn(k)), tr("Brand content (photo + video)","Vsebina za znamko (foto + video)"), tr("Event","Dogodek"), tr("Something else","Nekaj drugega")];
   $("enqType").innerHTML = types.map(t => `<option>${esc(t)}</option>`).join("");
-  $("enqBudget").innerHTML = BUDGETS.map(b => `<option value="${esc(b[1])}">${esc(tr(b[1], b[2]))}</option>`).join("");
   $("enqMsg").placeholder = tr("The idea, the look you like, links for inspiration…", "Ideja, stil, ki ti je všeč, povezave za navdih …");
   const p = S.profile, ig = (p.instagram || "").replace(/^@/, "").trim(), wa = waNum();
   $("enqActions").innerHTML = (p.email ? `<button class="btn solid lg" type="submit">${gi("mail","sm")}${tr("Send enquiry","Pošlji povpraševanje")}</button>` : "")
@@ -1326,8 +1323,7 @@ function enqText(){
     v.msg ? v.msg.trim() : tr("I'd like to book a shoot.", "Rad/a bi rezerviral/a snemanje."), "",
     [`${tr("Shoot","Snemanje")}: ${v.type || "-"}`,
      v.date ? `${tr("Date","Datum")}: ${v.date}` : "",
-     v.where ? `${tr("Location","Lokacija")}: ${v.where}` : "",
-     v.budget ? `${tr("Budget","Proračun")}: ${v.budget}` : ""].filter(Boolean).join("\n"), "",
+     v.where ? `${tr("Location","Lokacija")}: ${v.where}` : ""].filter(Boolean).join("\n"), "",
     v.name || "", v.email || ""
   ];
   return {v, text: lines.join("\n").replace(/\n{3,}/g, "\n\n").replace(/^(.+: .*)\n\n(?=.+: )/gm, "$1\n").trim()};
