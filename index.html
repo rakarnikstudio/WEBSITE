@@ -456,7 +456,6 @@ html,body{cursor:var(--cur-arrow)}
 .factions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .factions .hint{color:var(--mute);font-size:13px}
 .navbar .links a.hidep[hidden]{display:none}
-@media (max-width:440px){.navbar .links a#navPrices{display:none}}
 .navbar .links a{white-space:nowrap}
 .navbar .brand,.navbar .brand .face{flex:none}
 @media (max-width:440px){.navbar .links a .arr{display:none}}
@@ -473,7 +472,7 @@ html,body{cursor:var(--cur-arrow)}
   <header class="navbar glass">
     <a class="brand" href="#top" aria-label="Back to top"><span class="face" aria-hidden="true"></span><span class="bt" id="brandName">Nik Rakar</span></a>
     <nav class="links" aria-label="Sections">
-      <a href="#work" data-t="nav.work">Work</a><a href="#about" class="nm" data-t="nav.about">About</a><a href="#prices" id="navPrices" data-t="nav.prices">Prices</a><a href="#contact" data-t="nav.contact">Contact</a><a href="https://galleries.rakarnik.digital" target="_blank" rel="noopener" class="galnav" data-t="nav.gal">Galleries<span class="arr"> ↗</span></a>
+      <a href="#work" data-t="nav.work">Work</a><a href="#about" class="nm" data-t="nav.about">About</a><a href="#contact" data-t="nav.contact">Contact</a><a href="https://galleries.rakarnik.digital" target="_blank" rel="noopener" class="galnav" data-t="nav.gal">Galleries<span class="arr"> ↗</span></a>
       <button class="lang hov" id="langBtn" type="button" aria-label="Slovenščina / English">SLO</button>
       <button class="round hov" id="theme" type="button" aria-label="Switch black / white"><span class="gi" style="--h:48" data-ic="sun"></span></button>
     </nav>
@@ -530,7 +529,7 @@ html,body{cursor:var(--cur-arrow)}
   </section>
 
   <section class="sec" id="prices" hidden>
-    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:140" data-ic="camera"></span><div><h2 data-t="prices.h">Services &amp; prices</h2><p class="sub" data-t="prices.sub">Starting points. Every shoot is planned around you</p></div></div></div>
+    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:140" data-ic="camera"></span><div><h2 data-t="prices.h">Services</h2><p class="sub" data-t="prices.sub">What I can shoot for you. Every shoot is planned around you</p></div></div></div>
     <div class="pkgs" id="pkgs"></div>
   </section>
 
@@ -1194,7 +1193,7 @@ const SL = {
   "about.h":"O meni","about.sub":"Kdo je za kamero","about.cap":"Za kamero",
   "f.years":"Fotografiram že","f.gear":"Fotoaparat","f.loc":"Lokacija","f.status":"Status",
   "cases.h":"Projekti","cases.sub":"Delo za stranke, od ideje do rezultata",
-  "prices.h":"Storitve in cene","prices.sub":"Izhodišča. Vsako snemanje prilagodim tebi",
+  "prices.h":"Storitve","prices.sub":"Kaj lahko posnamem zate. Vsako snemanje prilagodim tebi",
   "process.h":"Kako poteka","process.sub":"Od prvega sporočila do končnih datotek",
   "clients.h":"Sodelovanja","clients.sub":"Znamke in ljudje, s katerimi sem delal",
   "faq.h":"Pogosta vprašanja","faq.sub":"Hitri odgovori pred rezervacijo",
@@ -1270,13 +1269,12 @@ $("caseWall").addEventListener("click", e => {
 
 function renderPkgs(){
   const ps = (B.packages || []).filter(x => x && x.name);
-  $("prices").hidden = !ps.length; $("navPrices").hidden = !ps.length;
+  $("prices").hidden = !ps.length;
   $("pkgs").innerHTML = ps.map((x, i) => {
     const inc = String(L(x, "includes") || "").split("\n").map(t => t.trim()).filter(Boolean);
     const price = String(x.price || "").trim();
     return `<div class="pkg glass${x.featured ? " feat" : ""}"><div class="hd">${gi(x.icon || "camera")}${x.featured ? `<span class="mono" style="font-size:10.5px;padding:4px 8px;border-radius:99px;background:var(--fg);color:var(--bg)">${tr("Popular","Priljubljeno")}</span>` : ""}</div>
       <div><span class="n">${esc(L(x,"name"))}</span><p class="d" style="margin-top:6px">${esc(L(x,"desc"))}</p></div>
-      ${price ? `<div class="price"><small>${tr("from","od")}</small>${esc(price)}</div>` : `<div class="price ask">${tr("Price on request","Cena po dogovoru")}</div>`}
       ${inc.length ? `<ul>${inc.map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
       <a class="btn solid" href="#contact" data-pkg="${i}">${tr("Ask about this","Povprašaj")}</a></div>`;
   }).join("");

@@ -274,7 +274,7 @@ collections:
     label: Clients page
     file: data/business.json
     format: json
-    description: Prices, how it works, FAQ, brands, client quotes, projects and showreel. Empty sections stay hidden on the site. Fields marked (Slovenian) show when visitors switch to SLO.
+    description: Services, how it works, FAQ, brands, client quotes, projects and showreel. Empty sections stay hidden on the site. Fields marked (Slovenian) show when visitors switch to SLO.
     fields:
     - name: showreel
       label: Showreel
@@ -299,11 +299,11 @@ collections:
         widget: image
         required: false
     - name: packages
-      label: Services & prices
-      label_singular: Package
+      label: Services
+      label_singular: Service
       widget: list
       collapsed: true
-      summary: '{{fields.name}} · {{fields.price}}'
+      summary: '{{fields.name}}'
       fields:
       - name: name
         label: Name
@@ -313,11 +313,6 @@ collections:
         label: Name (Slovenian)
         widget: string
         required: false
-      - name: price
-        label: Starting price
-        widget: string
-        required: false
-        hint: e.g. €120. Leave empty to show “Price on request”
       - name: icon
         label: Icon
         widget: select
