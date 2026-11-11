@@ -50,14 +50,14 @@
   },
   {
    "id": "film",
-   "name": "Film",
+   "name": "Video",
    "name_sl": "Video",
    "icon": "Film",
-   "what": "Short films, reels and edits",
-   "what_sl": "Kratki filmi, videi in montaže",
+   "what": "Cinematic 16:9 videos and edits",
+   "what_sl": "Filmski videi 16:9 in montaže",
    "kind": "Video",
-   "description": "Short films, reels and edits, from planning the shots to the final cut.",
-   "description_sl": "Kratki filmi, videi in montaže, od načrtovanja posnetkov do končne montaže.",
+   "description": "Cinematic 16:9 videos and edits, from planning the shots to the final cut.",
+   "description_sl": "Filmski videi v razmerju 16:9 in montaže, od načrtovanja posnetkov do končne montaže.",
    "in_form": true
   }
  ]
