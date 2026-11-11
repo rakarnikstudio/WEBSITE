@@ -53,6 +53,15 @@ a{color:inherit}
 .amb{position:fixed;inset:-20%;z-index:-1;pointer-events:none;opacity:var(--amb);filter:blur(70px);
   background:radial-gradient(46% 36% at 60% 30%,var(--amb-c),transparent 72%),radial-gradient(34% 30% at 10% 70%,color-mix(in srgb,var(--amb-c2) calc(var(--amb-o2)*100%),transparent),transparent 70%),radial-gradient(36% 30% at 92% 85%,var(--amb-c),transparent 70%);
   animation:drift 30s ease-in-out infinite alternate}
+/* speed: the soft background no longer moves (a moving background made every glass panel re-blur on each frame),
+   and cards inside the page use clear glass without live blur. Blur stays where it matters: menu bar, viewer, labels over photos. */
+.amb{animation:none;filter:none;transform:translateZ(0)}
+.gi{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+main .glass:not(.pill):not(.play):not(.cap),.contact,.about,footer .glass{-webkit-backdrop-filter:none;backdrop-filter:none}
+:root{--glass-solid:rgba(229,228,226,.045)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--glass-solid:rgba(255,255,255,.5)}}
+:root[data-theme="light"]{--glass-solid:rgba(255,255,255,.5)}
+main .glass:not(.pill):not(.play):not(.cap){background:var(--glass-solid)}
 @keyframes drift{to{transform:translate3d(3%,-2%,0) rotate(6deg) scale(1.05)}}
 
 /* glass surface */
