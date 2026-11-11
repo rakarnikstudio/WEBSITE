@@ -264,6 +264,12 @@ collections:
         label: Category page description (Slovenian)
         widget: text
         required: false
+      - name: in_form
+        label: Show in the enquiry form
+        widget: boolean
+        default: true
+        required: false
+        hint: Turn off to hide this category from “What do you need?” in the contact form
   - name: business
     label: Clients page
     file: data/business.json

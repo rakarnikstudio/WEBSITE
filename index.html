@@ -630,6 +630,7 @@ function applyCats(list){
   S.whatSl = Object.fromEntries(cats.map(c => [c.name, c.what_sl || ""]));
   S.pagesSl = Object.fromEntries(cats.map(c => [c.name, c.description_sl || ""]));
   S.catById = Object.fromEntries(cats.map(c => [String(c.id), c.name]));
+  S.formHide = Object.fromEntries(cats.map(c => [c.name, c.in_form === false]));
   cats.forEach(c => { const k = IC[c.icon] ? c.icon : (IC[c.name] ? c.name : "camera"); IC[c.name] = IC[k]; HUE[c.name] = HUE[k] ?? 210; });
 }
 /* Live data: GitHub's API returns the newest saved version instantly; the published copy is the fallback */
@@ -1306,10 +1307,10 @@ function renderFaq(){
 
 /* enquiry form: writes the message for the visitor, then opens their email app, Instagram or WhatsApp */
 function enqValues(){ const f = $("enq"); return f.elements ? Object.fromEntries(new FormData(f)) : {}; }
-function enqFill(v){ const f = $("enq"); if (!f.elements) return; Object.entries(v || {}).forEach(([k, val]) => { const el = f.elements[k]; if (!el) return; if (el.tagName === "SELECT" && val && ![...el.options].some(o => o.value === val)) el.add(new Option(val, val), 0); el.value = val; }); }
+function enqFill(v){ const f = $("enq"); if (!f.elements) return; Object.entries(v || {}).forEach(([k, val]) => { const el = f.elements[k]; if (!el) return; if (el.tagName === "SELECT" && ![...el.options].some(o => o.value === val)) return; el.value = val; }); }
 function renderForm(){
   const keep = enqValues();
-  const types = [...S.categories.map(k => cn(k)), tr("Brand content (photo + video)","Vsebina za znamko (foto + video)"), tr("Event","Dogodek"), tr("Something else","Nekaj drugega")];
+  const types = [...S.categories.filter(k => !(S.formHide && S.formHide[k])).map(k => cn(k)), tr("Brand content (photo + video)","Vsebina za znamko (foto + video)"), tr("Event","Dogodek"), tr("Something else","Nekaj drugega")];
   $("enqType").innerHTML = types.map((t, i) => `<option${i === types.length - 1 ? ' value="__other"' : ""}>${esc(t)}</option>`).join("");
   $("enqOther").placeholder = tr("e.g. product photos for my shop", "npr. fotografije izdelkov za mojo trgovino");
   $("enqMsg").placeholder = tr("The idea, the look you like, links for inspiration…", "Ideja, stil, ki ti je všeč, povezave za navdih …");

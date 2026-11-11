@@ -9,7 +9,8 @@
    "what_sl": "Poslovni, editorial in osebni portreti",
    "kind": "Photo",
    "description": "Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us.",
-   "description_sl": "Poslovni in editorial portreti ter osebna fotografiranja. Ljudje takšni, kot so, po Ljubljani in povsod, kamor nas pelje zgodba."
+   "description_sl": "Poslovni in editorial portreti ter osebna fotografiranja. Ljudje takšni, kot so, po Ljubljani in povsod, kamor nas pelje zgodba.",
+   "in_form": true
   },
   {
    "id": "automotive",
@@ -20,7 +21,8 @@
    "what_sl": "Posnetki v vožnji, statični posnetki, srečanja in dogodki",
    "kind": "Photo · Video",
    "description": "Cars in motion and at rest: rolling shots, statics, details and car meets, on stills and on video.",
-   "description_sl": "Avtomobili v gibanju in mirovanju: posnetki v vožnji, statični posnetki, detajli in srečanja, na fotografijah in v videu."
+   "description_sl": "Avtomobili v gibanju in mirovanju: posnetki v vožnji, statični posnetki, detajli in srečanja, na fotografijah in v videu.",
+   "in_form": true
   },
   {
    "id": "lifestyle",
@@ -31,7 +33,8 @@
    "what_sl": "Ulice in trenutki sveta.",
    "kind": "Photo · Video",
    "description": "Everyday moments and brand content. Real people in real places, made for social media and campaigns.",
-   "description_sl": "Vsakdanji trenutki in vsebina za znamke. Resnični ljudje na resničnih krajih, za družbena omrežja in kampanje."
+   "description_sl": "Vsakdanji trenutki in vsebina za znamke. Resnični ljudje na resničnih krajih, za družbena omrežja in kampanje.",
+   "in_form": false
   },
   {
    "id": "sports",
@@ -42,7 +45,8 @@
    "what_sl": "Akcija, ekipe, tekme in dogodki",
    "kind": "Photo",
    "description": "Action, teams and match days. Peak moments and the energy around the game.",
-   "description_sl": "Akcija, ekipe in tekmovalni dnevi. Vrhunski trenutki in energija okoli igre."
+   "description_sl": "Akcija, ekipe in tekmovalni dnevi. Vrhunski trenutki in energija okoli igre.",
+   "in_form": true
   },
   {
    "id": "film",
@@ -53,7 +57,8 @@
    "what_sl": "Kratki filmi, videi in montaže",
    "kind": "Video",
    "description": "Short films, reels and edits, from planning the shots to the final cut.",
-   "description_sl": "Kratki filmi, videi in montaže, od načrtovanja posnetkov do končne montaže."
+   "description_sl": "Kratki filmi, videi in montaže, od načrtovanja posnetkov do končne montaže.",
+   "in_form": true
   }
  ]
 }
