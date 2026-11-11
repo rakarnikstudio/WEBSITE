@@ -119,7 +119,7 @@ collections:
         - *id001
         - *id002
     - name: profile
-      label: Your details
+      label: About me & contact
       widget: object
       fields:
       - name: name
@@ -131,9 +131,30 @@ collections:
       - name: location
         label: Location
         widget: string
+      - name: headline
+        label: About headline
+        widget: string
+        required: false
+        hint: e.g. Hi, I'm Nik.
+      - name: photo
+        label: About photo
+        widget: image
+        required: false
+        hint: A photo of you; portrait (vertical) works best
       - name: about
-        label: About you
+        label: About text
         widget: text
+        hint: The first paragraph shows large. Leave an empty line between paragraphs.
+      - name: years
+        label: Shooting for
+        widget: string
+        required: false
+        hint: e.g. 4 years (leave empty to hide)
+      - name: gear
+        label: Camera
+        widget: string
+        required: false
+        hint: e.g. Sony A7 III (leave empty to hide)
       - name: email
         label: Email
         widget: string
