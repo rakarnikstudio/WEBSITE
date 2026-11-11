@@ -553,6 +553,8 @@ html,body{cursor:var(--cur-arrow)}
         <label><span data-t="fm.name">Your name</span><input name="name" autocomplete="name" required></label>
         <label><span data-t="fm.email">Your email</span><input name="email" type="email" autocomplete="email" required></label>
         <label><span data-t="fm.type">What do you need?</span><select name="type" id="enqType"></select></label>
+        <label class="full" id="otherWrap" hidden><span data-t="fm.other">What exactly do you need?</span><input name="other" id="enqOther"></label>
+        <input name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <label><span data-t="fm.date">Date (if you know it)</span><input name="date" type="date"></label>
         <label class="full"><span data-t="fm.where">Location</span><input name="where" placeholder="Ljubljana"></label>
         <label class="full"><span data-t="fm.msg">Tell me more</span><textarea name="msg" id="enqMsg"></textarea></label>
@@ -1191,7 +1193,7 @@ const SL = {
   "clients.h":"Sodelovanja","clients.sub":"Znamke in ljudje, s katerimi sem delal",
   "faq.h":"Pogosta vprašanja","faq.sub":"Hitri odgovori pred rezervacijo",
   "contact.h":"Imaš idejo? Pošlji mi sporočilo.","contact.note":"Povej mi, kaj imaš v mislih, kje in kdaj, in odgovoril ti bom z idejami. Ceno prilagodiva tvojemu projektu.",
-  "fm.name":"Tvoje ime","fm.email":"Tvoj e-naslov","fm.type":"Kaj potrebuješ?","fm.date":"Datum (če ga že veš)","fm.where":"Lokacija","fm.msg":"Povej mi več",
+  "fm.name":"Tvoje ime","fm.email":"Tvoj e-naslov","fm.type":"Kaj potrebuješ?","fm.date":"Datum (če ga že veš)","fm.where":"Lokacija","fm.msg":"Povej mi več","fm.other":"Kaj točno potrebuješ?",
   "case.back":"Vsi projekti","case.cta":"Načrtujva podobno snemanje →","cat.back":"Vse delo"
 };
 function applyLang(){
@@ -1308,37 +1310,63 @@ function enqFill(v){ const f = $("enq"); if (!f.elements) return; Object.entries
 function renderForm(){
   const keep = enqValues();
   const types = [...S.categories.map(k => cn(k)), tr("Brand content (photo + video)","Vsebina za znamko (foto + video)"), tr("Event","Dogodek"), tr("Something else","Nekaj drugega")];
-  $("enqType").innerHTML = types.map(t => `<option>${esc(t)}</option>`).join("");
+  $("enqType").innerHTML = types.map((t, i) => `<option${i === types.length - 1 ? ' value="__other"' : ""}>${esc(t)}</option>`).join("");
+  $("enqOther").placeholder = tr("e.g. product photos for my shop", "npr. fotografije izdelkov za mojo trgovino");
   $("enqMsg").placeholder = tr("The idea, the look you like, links for inspiration…", "Ideja, stil, ki ti je všeč, povezave za navdih …");
   const p = S.profile, ig = (p.instagram || "").replace(/^@/, "").trim(), wa = waNum();
   $("enqActions").innerHTML = (p.email ? `<button class="btn solid lg" type="submit">${gi("mail","sm")}${tr("Send enquiry","Pošlji povpraševanje")}</button>` : "")
     + (ig ? `<button class="btn ghost lg" type="button" data-send="ig">${gi("social","sm")}${tr("Send on Instagram","Pošlji na Instagramu")}</button>` : "")
     + (wa ? `<button class="btn ghost lg" type="button" data-send="wa">${gi("social","sm")}WhatsApp</button>` : "")
-    + `<span class="hint">${esc(L(B.contact || {}, "response") || tr("Opens your email app with everything filled in.", "Odpre tvojo e-pošto z že izpolnjenim sporočilom."))}</span>`;
-  enqFill(keep);
+    + `<span class="hint">${esc(L(B.contact || {}, "response") || tr("Goes straight to my inbox.", "Sporočilo pride naravnost k meni."))}</span>`;
+  enqFill(keep); otherToggle();
 }
+function otherToggle(){ const on = $("enqType").value === "__other"; $("otherWrap").hidden = !on; return on; }
+$("enqType").addEventListener("change", () => { if (otherToggle()) $("enqOther").focus(); });
+const enqKind = v => v.type === "__other" ? (tr("Something else", "Nekaj drugega") + (v.other ? ": " + v.other.trim() : "")) : (v.type || "-");
 function enqText(){
   const v = enqValues(), lines = [
     tr("Hi Nik,", "Živijo Nik,"), "",
     v.msg ? v.msg.trim() : tr("I'd like to book a shoot.", "Rad/a bi rezerviral/a snemanje."), "",
-    [`${tr("Shoot","Snemanje")}: ${v.type || "-"}`,
+    [`${tr("Shoot","Snemanje")}: ${enqKind(v)}`,
      v.date ? `${tr("Date","Datum")}: ${v.date}` : "",
      v.where ? `${tr("Location","Lokacija")}: ${v.where}` : ""].filter(Boolean).join("\n"), "",
     v.name || "", v.email || ""
   ];
   return {v, text: lines.join("\n").replace(/\n{3,}/g, "\n\n").replace(/^(.+: .*)\n\n(?=.+: )/gm, "$1\n").trim()};
 }
-function enqCheck(){
+function enqCheck(needMail){
   const f = $("enq"), n = f.elements.name, m = f.elements.email;
   if (!n.value.trim()) { n.focus(); toast(tr("Add your name first","Najprej dodaj svoje ime")); return false; }
+  if (needMail && !m.value.trim()) { m.focus(); toast(tr("Add your email so I can reply","Dodaj e-naslov, da ti lahko odgovorim")); return false; }
   if (m.value && !m.checkValidity()) { m.focus(); toast(tr("Check your email address","Preveri e-naslov")); return false; }
+  if (f.elements.type.value === "__other" && !f.elements.other.value.trim()) { f.elements.other.focus(); toast(tr("Tell me what exactly you need","Napiši, kaj točno potrebuješ")); return false; }
   return true;
 }
-$("enq").addEventListener("submit", e => {
-  e.preventDefault(); if (!enqCheck()) return;
-  const {v, text} = enqText(), to = S.profile.email;
-  location.href = `mailto:${to}?subject=${encodeURIComponent(tr("Shoot enquiry", "Povpraševanje za snemanje") + ": " + (v.type || "") + (v.name ? " · " + v.name : ""))}&body=${encodeURIComponent(text)}`;
-  toast(tr("Your email app is opening. Just press send.", "Odpira se tvoja e-pošta. Samo pritisni pošlji."));
+/* the form goes straight to Nik's inbox (FormSubmit); if that fails, the visitor's email app opens as a backup */
+$("enq").addEventListener("submit", async e => {
+  e.preventDefault(); if (!enqCheck(true)) return;
+  const f = $("enq"), {v, text} = enqText(), to = S.profile.email;
+  if (f.elements._honey.value) return;
+  const subject = "Shoot enquiry: " + enqKind(v) + (v.name ? " · " + v.name : "");
+  const btn = f.querySelector('[type="submit"]'), label = btn.innerHTML;
+  btn.disabled = true; btn.textContent = tr("Sending…", "Pošiljam …");
+  let ok = false;
+  try {
+    const r = await fetch(`https://formsubmit.co/ajax/${String(to).replace(/[^\w@.+-]/g, "")}`, {method:"POST", headers:{"Content-Type":"application/json", Accept:"application/json"},
+      body: JSON.stringify({_subject: subject, _template: "table", _captcha: "false", _replyto: v.email, Name: v.name, Email: v.email, Shoot: enqKind(v), Date: v.date || "-", Location: v.where || "-", Message: (v.msg || "").trim() || "-", Language: LANG === "sl" ? "Slovenian" : "English"})});
+    const j = await r.json().catch(() => ({}));
+    ok = r.ok && String(j.success) === "true";
+  } catch {}
+  btn.disabled = false; btn.innerHTML = label;
+  if (ok) {
+    f.reset(); otherToggle();
+    f.insertAdjacentHTML("beforebegin", `<div class="cbox" id="enqDone" style="margin-bottom:12px">${gi("mail")}<div class="t"><b style="font-size:17px">${tr("Thanks, your message is on its way!","Hvala, sporočilo je poslano!")}</b><span>${tr("I'll get back to you soon by email.","Kmalu ti odgovorim po e-pošti.")}</span></div></div>`);
+    $("enqDone").scrollIntoView({block:"center", behavior:"smooth"});
+    setTimeout(() => $("enqDone")?.remove(), 15000);
+  } else {
+    location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+    toast(tr("Couldn't send it from here, so your email app is opening instead.", "Pošiljanje ni uspelo, zato se odpira tvoja e-pošta."));
+  }
 });
 $("enq").addEventListener("click", async e => {
   const b = e.target.closest("[data-send]"); if (!b) return;
