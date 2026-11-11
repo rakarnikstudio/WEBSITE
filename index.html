@@ -1356,7 +1356,22 @@ $("enq").addEventListener("submit", async e => {
   const ctl = new AbortController(), stop = setTimeout(() => ctl.abort(), 20000);
   const fields = {Name: v.name, Email: v.email, Shoot: enqKind(v), Date: v.date || "-", Location: v.where || "-", Message: (v.msg || "").trim() || "-", Language: LANG === "sl" ? "Slovenian" : "English"};
   const key = String((B.contact && B.contact.form_key) || "").trim();
-  try {
+  const ej = B.contact || {}, useEJ = ej.emailjs_public && ej.emailjs_service && ej.emailjs_notify;
+  const ejSend = (tpl, params, signal) => fetch("https://api.emailjs.com/api/v1.0/email/send", {method:"POST", signal, headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({service_id: ej.emailjs_service.trim(), template_id: tpl.trim(), user_id: ej.emailjs_public.trim(), template_params: params})});
+  if (useEJ) {
+    try {
+      const first = (v.name || "").trim().split(/\s+/)[0] || "";
+      const fill = t => String(t || "").replace(/\{name\}/g, first).replace(/\{shoot\}/g, v.type === "__other" ? ((v.other || "").trim() || tr("your project", "vaš projekt")) : (v.type || tr("your project", "vaš projekt")));
+      const rs = fill(L(ej, "reply_subject") || tr("Thanks for your enquiry, {name}", "Hvala za vaše povpraševanje, {name}"));
+      const rb = fill(L(ej, "reply_body") || "");
+      const params = {subject, name: v.name, email: v.email, shoot: enqKind(v), date: v.date || "-", location: v.where || "-", message: (v.msg || "").trim() || "-", language: fields.Language,
+        reply_subject: rs, reply_message: rb, reply_html: esc(rb).replace(/\n/g, "<br>")};
+      const r = await ejSend(ej.emailjs_notify, params, ctl.signal);
+      ok = r.ok;
+      if (ok && ej.emailjs_reply && rb) { try { await ejSend(ej.emailjs_reply, params); } catch {} }
+    } catch {}
+  } else try {
     const r = key
       ? await fetch("https://api.web3forms.com/submit", {method:"POST", signal:ctl.signal, headers:{"Content-Type":"application/json", Accept:"application/json"},
           body: JSON.stringify(Object.assign({access_key: key, subject, from_name: "rakarnik.digital", replyto: v.email, botcheck: ""}, fields))})

@@ -115,6 +115,14 @@
   "whatsapp": "",
   "response": "",
   "response_sl": "",
-  "form_key": "2209d57e-77c3-47e1-80fe-7a18de315df6"
+  "form_key": "2209d57e-77c3-47e1-80fe-7a18de315df6",
+  "emailjs_public": "",
+  "emailjs_service": "",
+  "emailjs_notify": "",
+  "emailjs_reply": "",
+  "reply_subject": "Thanks for your enquiry, {name}",
+  "reply_subject_sl": "Hvala za vaše povpraševanje, {name}",
+  "reply_body": "Hi {name},\n\nThank you for reaching out. I've received your enquiry about {shoot} and will get back to you within a few days with ideas and next steps.\n\nIf you have reference photos or more details, just reply to this email.\n\nBest regards,\nNik Rakar\nrakarnik.digital · @nik_rakar",
+  "reply_body_sl": "Pozdravljeni {name},\n\nhvala, da ste se obrnili name. Vaše povpraševanje ({shoot}) sem prejel in se vam v nekaj dneh oglasim z idejami in naslednjimi koraki.\n\nČe imate referenčne fotografije ali dodatne podrobnosti, preprosto odgovorite na to sporočilo.\n\nLep pozdrav,\nNik Rakar\nrakarnik.digital · @nik_rakar"
  }
 }

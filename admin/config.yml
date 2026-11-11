@@ -543,6 +543,41 @@ collections:
         widget: string
         required: false
         hint: From web3forms.com. Makes the contact form send instantly. Leave empty to use FormSubmit
+      - name: emailjs_public
+        label: EmailJS public key
+        widget: string
+        required: false
+        hint: EmailJS → Account → Public Key. When the EmailJS fields are filled in, the form sends through your Gmail
+      - name: emailjs_service
+        label: EmailJS service ID
+        widget: string
+        required: false
+      - name: emailjs_notify
+        label: 'EmailJS template ID: new enquiry (to you)'
+        widget: string
+        required: false
+      - name: emailjs_reply
+        label: 'EmailJS template ID: automatic reply (to the client)'
+        widget: string
+        required: false
+      - name: reply_subject
+        label: 'Automatic reply: subject'
+        widget: string
+        required: false
+        hint: '{name} = client''s first name, {shoot} = what they picked'
+      - name: reply_subject_sl
+        label: 'Automatic reply: subject (Slovenian)'
+        widget: string
+        required: false
+      - name: reply_body
+        label: 'Automatic reply: message'
+        widget: text
+        required: false
+        hint: Leave empty to send no automatic reply
+      - name: reply_body_sl
+        label: 'Automatic reply: message (Slovenian)'
+        widget: text
+        required: false
       - name: whatsapp
         label: WhatsApp number (optional)
         widget: string
