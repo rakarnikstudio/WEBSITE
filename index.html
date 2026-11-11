@@ -456,6 +456,11 @@ html,body{cursor:var(--cur-arrow)}
 .factions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .factions .hint{color:var(--mute);font-size:13px}
 .navbar .links a.hidep[hidden]{display:none}
+@media (max-width:440px){.navbar .links a#navPrices{display:none}}
+.navbar .links a{white-space:nowrap}
+.navbar .brand,.navbar .brand .face{flex:none}
+@media (max-width:440px){.navbar .links a .arr{display:none}}
+@media (max-width:370px){.navbar .links{gap:0}.navbar .links a{padding-left:5px;padding-right:5px;font-size:13px}.navbar .lang{padding:6px 7px}}
 @media (max-width:520px){.navbar .links{gap:2px}.navbar .links a{padding-left:8px;padding-right:8px;font-size:14px}.navbar .links a.nm{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -468,7 +473,7 @@ html,body{cursor:var(--cur-arrow)}
   <header class="navbar glass">
     <a class="brand" href="#top" aria-label="Back to top"><span class="face" aria-hidden="true"></span><span class="bt" id="brandName">Nik Rakar</span></a>
     <nav class="links" aria-label="Sections">
-      <a href="#work" data-t="nav.work">Work</a><a href="#about" class="nm" data-t="nav.about">About</a><a href="#prices" id="navPrices" data-t="nav.prices">Prices</a><a href="#contact" data-t="nav.contact">Contact</a>
+      <a href="#work" data-t="nav.work">Work</a><a href="#about" class="nm" data-t="nav.about">About</a><a href="#prices" id="navPrices" data-t="nav.prices">Prices</a><a href="#contact" data-t="nav.contact">Contact</a><a href="https://galleries.rakarnik.digital" target="_blank" rel="noopener" class="galnav" data-t="nav.gal">Galleries<span class="arr"> ↗</span></a>
       <button class="lang hov" id="langBtn" type="button" aria-label="Slovenščina / English">SLO</button>
       <button class="round hov" id="theme" type="button" aria-label="Switch black / white"><span class="gi" style="--h:48" data-ic="sun"></span></button>
     </nav>
@@ -1182,7 +1187,7 @@ const asset = u => !u ? "" : /^(https?:|\/|data:)/.test(u) ? u : "/" + u;
 const caseSlug = c => String(c.slug || c.title || "project").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const waNum = () => String((B.contact && B.contact.whatsapp) || "").replace(/[^\d]/g, "");
 const SL = {
-  "nav.work":"Delo","nav.about":"O meni","nav.prices":"Cene","nav.contact":"Kontakt",
+  "nav.work":"Delo","nav.about":"O meni","nav.prices":"Cene","nav.contact":"Kontakt","nav.gal":"Galerije<span class=\"arr\"> ↗</span>",
   "pill.pv":"Foto in video","pill.avail":"Na voljo za snemanja",
   "reel.h":"Showreel","reel.sub":"Moji najboljši posnetki v gibanju",
   "work.h":"Izbrano delo","work.sub":"Portreti, avtomobili, ulica in šport",
