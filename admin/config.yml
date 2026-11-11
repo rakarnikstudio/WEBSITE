@@ -128,6 +128,10 @@ collections:
       - name: role
         label: What you do
         widget: string
+      - name: role_sl
+        label: What you do (Slovenian)
+        widget: string
+        required: false
       - name: location
         label: Location
         widget: string
@@ -136,6 +140,10 @@ collections:
         widget: string
         required: false
         hint: e.g. Hi, I'm Nik.
+      - name: headline_sl
+        label: About headline (Slovenian)
+        widget: string
+        required: false
       - name: photo
         label: About photo
         widget: image
@@ -145,6 +153,10 @@ collections:
         label: About text
         widget: text
         hint: The first paragraph shows large. Leave an empty line between paragraphs.
+      - name: about_sl
+        label: About text (Slovenian)
+        widget: text
+        required: false
       - name: years
         label: Shooting for
         widget: string
@@ -197,10 +209,14 @@ collections:
         label: Name
         widget: string
         hint: Shown on the filters, cards and category page, e.g. Street photography
+      - name: name_sl
+        label: Name (Slovenian)
+        widget: string
+        required: false
       - name: icon
         label: Icon
         widget: select
-        options:
+        options: &id003
         - label: Person
           value: Portraits
         - label: Car
@@ -231,6 +247,10 @@ collections:
         widget: string
         required: false
         hint: One line under the name in “What I shoot”
+      - name: what_sl
+        label: Card text (Slovenian)
+        widget: string
+        required: false
       - name: kind
         label: Label
         widget: string
@@ -239,4 +259,290 @@ collections:
       - name: description
         label: Category page description
         widget: text
+        required: false
+      - name: description_sl
+        label: Category page description (Slovenian)
+        widget: text
+        required: false
+  - name: business
+    label: Clients page
+    file: data/business.json
+    format: json
+    description: Prices, how it works, FAQ, brands, client quotes, projects and showreel. Empty sections stay hidden on the site. Fields marked (Slovenian) show when visitors switch to SLO.
+    fields:
+    - name: showreel
+      label: Showreel
+      widget: object
+      collapsed: true
+      hint: A YouTube/Vimeo link or a video file. Leave both empty to hide it
+      fields:
+      - name: url
+        label: YouTube or Vimeo link
+        widget: string
+        required: false
+      - name: src
+        label: …or a video file
+        widget: file
+        required: false
+        media_folder: /videos
+        public_folder: /videos
+        accept: video/mp4,video/webm,video/quicktime
+        hint: MP4 under 95 MB, plays silently on loop
+      - name: poster
+        label: Cover image (optional)
+        widget: image
+        required: false
+    - name: packages
+      label: Services & prices
+      label_singular: Package
+      widget: list
+      collapsed: true
+      summary: '{{fields.name}} · {{fields.price}}'
+      fields:
+      - name: name
+        label: Name
+        widget: string
+        required: true
+      - name: name_sl
+        label: Name (Slovenian)
+        widget: string
+        required: false
+      - name: price
+        label: Starting price
+        widget: string
+        required: false
+        hint: e.g. €120. Leave empty to show “Price on request”
+      - name: icon
+        label: Icon
+        widget: select
+        options: *id003
+        default: camera
+      - name: desc
+        label: Short description
+        widget: text
+        required: false
+      - name: desc_sl
+        label: Short description (Slovenian)
+        widget: text
+        required: false
+      - name: includes
+        label: What's included
+        widget: text
+        required: false
+        hint: One item per line
+      - name: includes_sl
+        label: What's included (Slovenian)
+        widget: text
+        required: false
+      - name: featured
+        label: Highlight as popular
+        widget: boolean
+        default: false
+        required: false
+    - name: steps
+      label: How it works
+      label_singular: Step
+      widget: list
+      collapsed: true
+      summary: '{{fields.title}}'
+      fields:
+      - name: title
+        label: Title
+        widget: string
+        required: true
+      - name: title_sl
+        label: Title (Slovenian)
+        widget: string
+        required: false
+      - name: text
+        label: Text
+        widget: text
+        required: false
+      - name: text_sl
+        label: Text (Slovenian)
+        widget: text
+        required: false
+    - name: faq
+      label: FAQ
+      label_singular: Question
+      widget: list
+      collapsed: true
+      summary: '{{fields.q}}'
+      fields:
+      - name: q
+        label: Question
+        widget: string
+        required: true
+      - name: q_sl
+        label: Question (Slovenian)
+        widget: string
+        required: false
+      - name: a
+        label: Answer
+        widget: text
+        required: false
+      - name: a_sl
+        label: Answer (Slovenian)
+        widget: text
+        required: false
+    - name: brands
+      label: Brands you worked with
+      label_singular: Brand
+      widget: list
+      collapsed: true
+      summary: '{{fields.name}}'
+      hint: Only add brands that are OK with being shown
+      fields:
+      - name: name
+        label: Brand name
+        widget: string
+        required: true
+      - name: logo
+        label: Logo (optional)
+        widget: image
+        required: false
+        hint: PNG with a transparent background looks best
+      - name: url
+        label: Website or Instagram link (optional)
+        widget: string
+        required: false
+    - name: quotes
+      label: Client quotes
+      label_singular: Quote
+      widget: list
+      collapsed: true
+      summary: '{{fields.name}}'
+      hint: Real words from real clients, with their permission
+      fields:
+      - name: quote
+        label: Quote
+        widget: text
+        required: true
+      - name: quote_sl
+        label: Quote (Slovenian)
+        widget: text
+        required: false
+      - name: name
+        label: Name
+        widget: string
+        required: true
+      - name: role
+        label: Role or brand
+        widget: string
+        required: false
+        hint: e.g. Owner, Brand X
+      - name: role_sl
+        label: Role or brand (Slovenian)
+        widget: string
+        required: false
+    - name: cases
+      label: Projects (case studies)
+      label_singular: Project
+      widget: list
+      collapsed: true
+      summary: '{{fields.title}}'
+      fields:
+      - name: title
+        label: Project title
+        widget: string
+        required: true
+      - name: title_sl
+        label: Project title (Slovenian)
+        widget: string
+        required: false
+      - name: client
+        label: Client / brand
+        widget: string
+        required: false
+      - name: year
+        label: Year
+        widget: string
+        required: false
+      - name: cat
+        label: Category
+        widget: relation
+        collection: portfolio
+        file: categories
+        value_field: cats.*.id
+        display_fields:
+        - cats.*.name
+        search_fields:
+        - cats.*.name
+        required: false
+      - name: cover
+        label: Cover photo
+        widget: image
+        required: false
+      - name: summary
+        label: One-line summary
+        widget: string
+        required: false
+      - name: summary_sl
+        label: One-line summary (Slovenian)
+        widget: string
+        required: false
+      - name: brief
+        label: 'The brief: what they needed'
+        widget: text
+        required: false
+      - name: brief_sl
+        label: The brief (Slovenian)
+        widget: text
+        required: false
+      - name: delivered
+        label: What you delivered
+        widget: text
+        required: false
+      - name: delivered_sl
+        label: What you delivered (Slovenian)
+        widget: text
+        required: false
+      - name: result
+        label: The result
+        widget: text
+        required: false
+      - name: result_sl
+        label: The result (Slovenian)
+        widget: text
+        required: false
+      - name: video_url
+        label: YouTube or Vimeo link (optional)
+        widget: string
+        required: false
+      - name: video
+        label: …or a video file (optional)
+        widget: file
+        required: false
+        media_folder: /videos
+        public_folder: /videos
+        accept: video/mp4,video/webm,video/quicktime
+      - name: photos
+        label: Photos
+        label_singular: Photo
+        widget: list
+        collapsed: true
+        thumbnail: src
+        required: false
+        fields:
+        - name: src
+          label: Photo
+          widget: image
+    - name: contact
+      label: Contact extras
+      widget: object
+      collapsed: true
+      fields:
+      - name: whatsapp
+        label: WhatsApp number (optional)
+        widget: string
+        required: false
+        hint: With country code, e.g. +386 40 123 456. Adds a WhatsApp button
+      - name: response
+        label: Note under the Send button (optional)
+        widget: string
+        required: false
+        hint: e.g. I usually reply within a day
+      - name: response_sl
+        label: Note under the Send button (Slovenian)
+        widget: string
         required: false

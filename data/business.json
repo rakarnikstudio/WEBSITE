@@ -1,0 +1,119 @@
+{
+ "showreel": {
+  "url": "",
+  "src": "",
+  "poster": ""
+ },
+ "packages": [
+  {
+   "name": "Portrait session",
+   "name_sl": "Portretno fotografiranje",
+   "icon": "Portraits",
+   "price": "",
+   "featured": false,
+   "desc": "Headshots, personal or editorial portraits, outdoors or on location.",
+   "desc_sl": "Poslovni, osebni ali editorial portreti, zunaj ali na lokaciji.",
+   "includes": "Planning the look and location\nShoot on location around Ljubljana\nHand-edited, high-resolution photos\nOnline gallery to download",
+   "includes_sl": "Načrt videza in lokacije\nFotografiranje na lokaciji v okolici Ljubljane\nRočno obdelane fotografije v visoki ločljivosti\nSpletna galerija za prenos"
+  },
+  {
+   "name": "Car shoot",
+   "name_sl": "Fotografiranje avtomobila",
+   "icon": "Automotive",
+   "price": "",
+   "featured": false,
+   "desc": "Statics and rolling shots for owners, dealers and car clubs.",
+   "desc_sl": "Statični posnetki in posnetki v vožnji za lastnike, prodajalce in klube.",
+   "includes": "Location scouting\nStatic and rolling shots\nEdited photos ready for social and print\nOptional short reel",
+   "includes_sl": "Iskanje lokacije\nStatični posnetki in posnetki v vožnji\nObdelane fotografije za splet in tisk\nPo želji kratek video"
+  },
+  {
+   "name": "Brand content (photo + video)",
+   "name_sl": "Vsebina za znamke (foto + video)",
+   "icon": "Film",
+   "price": "",
+   "featured": false,
+   "desc": "Photos and short videos for your brand's social media, website and ads.",
+   "desc_sl": "Fotografije in kratki videi za družbena omrežja, spletno stran in oglase tvoje znamke.",
+   "includes": "Shot list planned together\nPhoto and video on the same day\nVertical reels and edited photos\nReady to post on your channels",
+   "includes_sl": "Seznam posnetkov načrtujeva skupaj\nFoto in video na isti dan\nPokončni videi in obdelane fotografije\nPripravljeno za objavo na tvojih kanalih"
+  },
+  {
+   "name": "Events & sport",
+   "name_sl": "Dogodki in šport",
+   "icon": "Sports",
+   "price": "",
+   "featured": false,
+   "desc": "Matches, races, launches and events, in photos and highlight videos.",
+   "desc_sl": "Tekme, dirke, predstavitve in dogodki v fotografijah in videih.",
+   "includes": "Coverage of the key moments\nEdited photo set\nOptional highlight video",
+   "includes_sl": "Vsi ključni trenutki\nObdelan nabor fotografij\nPo želji video z najboljšimi trenutki"
+  }
+ ],
+ "steps": [
+  {
+   "title": "Send a message",
+   "title_sl": "Pošlji sporočilo",
+   "text": "Use the form below or DM me on Instagram: what you need, when and where.",
+   "text_sl": "Izpolni obrazec spodaj ali mi piši na Instagramu: kaj potrebuješ, kdaj in kje."
+  },
+  {
+   "title": "We plan it",
+   "title_sl": "Načrtujeva",
+   "text": "I reply with ideas, a plan and a quote, so you know exactly what you'll get.",
+   "text_sl": "Odgovorim z idejami, načrtom in ponudbo, da točno veš, kaj dobiš."
+  },
+  {
+   "title": "Shoot day",
+   "title_sl": "Dan snemanja",
+   "text": "We shoot on location. I direct and keep it relaxed, you just show up.",
+   "text_sl": "Snemava na lokaciji. Jaz vodim in poskrbim za sproščeno vzdušje, ti samo prideš."
+  },
+  {
+   "title": "Delivery",
+   "title_sl": "Dostava",
+   "text": "You get the edited photos and videos by download link, ready to post.",
+   "text_sl": "Obdelane fotografije in videe dobiš po povezavi za prenos, pripravljene za objavo."
+  }
+ ],
+ "faq": [
+  {
+   "q": "How do I book a shoot?",
+   "q_sl": "Kako rezerviram snemanje?",
+   "a": "Fill in the form below or message me on Instagram. Once we agree on the plan and the date, it's booked.",
+   "a_sl": "Izpolni obrazec spodaj ali mi piši na Instagramu. Ko se dogovoriva za načrt in datum, je termin tvoj."
+  },
+  {
+   "q": "When will I get my photos?",
+   "q_sl": "Kdaj dobim fotografije?",
+   "a": "It depends on the size of the shoot. You'll get a delivery date when we plan it.",
+   "a_sl": "Odvisno od obsega snemanja. Datum dostave se dogovoriva, ko ga načrtujeva."
+  },
+  {
+   "q": "Do you travel?",
+   "q_sl": "Ali potuješ?",
+   "a": "I'm based in Ljubljana and happy to shoot anywhere in Slovenia. Travel further away is agreed in the quote.",
+   "a_sl": "Sem iz Ljubljane in rad snemam kjerkoli po Sloveniji. Daljše poti se dogovorimo v ponudbi."
+  },
+  {
+   "q": "Can I use the photos for my brand?",
+   "q_sl": "Lahko fotografije uporabim za svojo znamko?",
+   "a": "Yes. Where and how you can use them is agreed in the quote, so everything is clear upfront.",
+   "a_sl": "Da. Kje in kako jih lahko uporabiš, se dogovoriva v ponudbi, da je vse jasno vnaprej."
+  },
+  {
+   "q": "Can you shoot photo and video at the same time?",
+   "q_sl": "Lahko hkrati fotografiraš in snemaš?",
+   "a": "Yes. I can do both on the same shoot, so your photos and videos match.",
+   "a_sl": "Da. Na istem snemanju lahko naredim oboje, zato se fotografije in video ujemajo."
+  }
+ ],
+ "brands": [],
+ "quotes": [],
+ "cases": [],
+ "contact": {
+  "whatsapp": "",
+  "response": "",
+  "response_sl": ""
+ }
+}

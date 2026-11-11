@@ -3,13 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Nik Rakar, photographer and cinematographer from Ljubljana, Slovenia. Portraits, automotive, lifestyle, sports and film.">
+<meta name="description" content="Nik Rakar, photographer and cinematographer from Ljubljana, Slovenia. Portraits, car photography, street, sport and brand video.">
 <meta property="og:title" content="Nik Rakar · Photographer & cinematographer">
 <meta property="og:description" content="Portraits, cars, lifestyle and sport from Ljubljana, Slovenia.">
 <meta property="og:url" content="https://rakarnik.digital/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0A0A0A">
 <link rel="icon" type="image/png" href="face.png">
+<link rel="canonical" href="https://rakarnik.digital/">
+<meta name="keywords" content="photographer Ljubljana, fotograf Ljubljana, car photography Slovenia, fotografiranje avtomobilov, portretna fotografija, snemalec, videograf Ljubljana, cinematographer Slovenia">
+<meta property="og:image" content="https://rakarnik.digital/photos/about/nik.jpg">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="sl_SI">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nik Rakar Photography & Film","alternateName":"Nik Rakar","url":"https://rakarnik.digital/","image":"https://rakarnik.digital/photos/about/nik.jpg","logo":"https://rakarnik.digital/face.png","description":"Photographer and cinematographer in Ljubljana, Slovenia: portraits, car photography, street, sport and brand video.","areaServed":"Slovenia","address":{"@type":"PostalAddress","addressLocality":"Ljubljana","addressCountry":"SI"},"founder":{"@type":"Person","name":"Nik Rakar","jobTitle":"Photographer and cinematographer"},"sameAs":["https://www.instagram.com/nik_rakar/"],"knowsLanguage":["sl","en"]}</script>
 <style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Nik Rakar Portfolio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -152,7 +158,7 @@ section.sec{padding-block:clamp(56px,7vw,96px) 0;scroll-margin-top:80px}
 .abody h3{margin:0;font-size:clamp(40px,6vw,84px);font-weight:700;letter-spacing:-.055em;line-height:.9;text-transform:uppercase}
 .abody .atext{display:grid;gap:12px}
 .abody .atext p{margin:0;color:var(--mute);font-size:clamp(15px,1.25vw,17px);line-height:1.6;max-width:60ch;text-wrap:pretty}
-.abody .atext p:first-child{color:var(--ink);font-size:clamp(19px,1.9vw,24px);font-weight:500;letter-spacing:-.02em;line-height:1.35}
+.abody .atext p:first-child{color:var(--fg);font-size:clamp(19px,1.9vw,24px);font-weight:500;letter-spacing:-.02em;line-height:1.35}
 .about.nophoto{grid-template-columns:1fr}
 .facts.row{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
 .about p.big{margin:0;font-size:clamp(22px,2.6vw,32px);font-weight:500;letter-spacing:-.025em;line-height:1.25;text-wrap:pretty}
@@ -382,6 +388,75 @@ html,body{cursor:var(--cur-arrow)}
 :root a,:root button,:root [role=button],:root label,:root summary,:root select,:root .hit,:root .cover,:root .chip,:root .lbnav,:root .morelink,:root .logo .face{cursor:var(--cur-hand)!important}
 :root .lbm,:root .lbstage,:root .lbslide{cursor:var(--cur-arrow)!important}
 :root input,:root textarea{cursor:text!important}
+/* ---------- client features ---------- */
+.lang{font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:7px 10px;border-radius:99px;background:var(--soft);border:1px solid var(--line)}
+.btn.lg{padding:12px 20px;font-size:15px}
+.btn.ghost{background:var(--soft);border:1px solid var(--line)}
+.reelbox{border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;position:relative;padding:0;background:#000}
+.reelbox video,.reelbox img,.reelbox iframe{width:100%;height:100%;object-fit:cover;display:block;border:0}
+.reelbox .reelbtn{position:absolute;left:18px;bottom:18px}
+.pkgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.pkg{border-radius:var(--r-md);padding:22px;display:flex;flex-direction:column;gap:14px}
+.pkg .hd{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.pkg .n{display:block;font-size:21px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.pkg .d{margin:0;color:var(--mute);font-size:14px;line-height:1.5}
+.pkg .price{font-size:clamp(26px,2.6vw,34px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.pkg .price small{font-size:13px;color:var(--mute);font-weight:500;letter-spacing:0;margin-right:6px}
+.pkg .price.ask{font-size:18px;letter-spacing:-.01em}
+.pkg ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px}
+.pkg li{display:flex;gap:9px;line-height:1.4}
+.pkg li::before{content:"✓";color:var(--acc);font-weight:700}
+.pkg .btn{align-self:flex-start;margin-top:auto}
+.pkg.feat{outline:2px solid var(--fg);outline-offset:-2px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.step{border-radius:var(--r-md);padding:22px;display:grid;gap:10px;align-content:start}
+.step .num{font-size:clamp(40px,4vw,56px);font-weight:700;letter-spacing:-.06em;line-height:.9;color:var(--acc)}
+.step b{font-size:19px;letter-spacing:-.02em}
+.step p{margin:0;color:var(--mute);font-size:14px;line-height:1.5}
+.brands{display:flex;flex-wrap:wrap;gap:10px}
+.brandl{border-radius:var(--r-md);padding:14px 22px;min-height:72px;display:flex;align-items:center;justify-content:center;flex:1 1 150px;text-decoration:none;font-weight:700;letter-spacing:-.02em;font-size:18px}
+.brandl img{max-height:42px;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.85;transition:filter .3s,opacity .3s}
+.brandl:hover img{filter:none;opacity:1}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px}
+.quote{border-radius:var(--r-md);padding:24px;display:grid;gap:16px;margin:0}
+.quote blockquote{margin:0;font-size:clamp(17px,1.5vw,20px);font-weight:500;letter-spacing:-.015em;line-height:1.45}
+.quote blockquote::before{content:"“";display:block;font-size:52px;line-height:.6;color:var(--acc);font-weight:700}
+.quote figcaption{color:var(--mute);font-size:14px}.quote figcaption b{color:var(--fg);display:block;font-size:15px}
+.faqs{display:grid;gap:8px}
+.faq{border-radius:var(--r-md);overflow:hidden}
+.faq summary{list-style:none;padding:18px 20px;font-weight:600;font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:var(--cur-hand,pointer)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{font-style:normal;font-size:22px;font-weight:400;transition:transform .35s var(--spring);color:var(--mute)}
+.faq[open] summary i{transform:rotate(45deg)}
+.faq p{margin:0;padding:0 20px 20px;color:var(--mute);line-height:1.6;max-width:70ch}
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.case{border-radius:var(--r);overflow:hidden;display:grid;text-decoration:none;align-content:start}
+.case .ci{aspect-ratio:4/3;overflow:hidden;background:var(--soft)}
+.case .ci img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--spring)}
+.case:hover .ci img{transform:scale(1.04)}
+.case .cb{padding:18px 20px 20px;display:grid;gap:6px}
+.case .cb b{font-size:22px;letter-spacing:-.03em;line-height:1.1}
+.case .cb p{margin:0;color:var(--mute);font-size:14px;line-height:1.5}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:12px 0}
+.cblock{border-radius:var(--r-md);padding:22px;display:grid;gap:8px;align-content:start}
+.cblock p{margin:0;line-height:1.6;white-space:pre-line}
+.cvideo{border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;margin:12px 0;background:#000}
+.cvideo iframe,.cvideo video{width:100%;height:100%;border:0;display:block}
+.cwall{columns:3 280px;column-gap:12px}
+.cwall button{display:block;width:100%;margin:0 0 12px;border-radius:var(--r-md);overflow:hidden;break-inside:avoid;background:var(--soft)}
+.cwall img{width:100%;display:block}
+.contact .form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.contact .form .full{grid-column:1/-1}
+@media (max-width:640px){.contact .form{grid-template-columns:1fr}}
+.contact .form label{display:grid;gap:6px;font-size:13px;color:var(--mute)}
+.contact .form input,.contact .form select,.contact .form textarea{color:var(--fg);background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:16px;width:100%;box-sizing:border-box;min-width:0}
+.contact .form select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 15px) 55%;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+.contact .form textarea{min-height:120px;resize:vertical}
+.contact .form :is(input,select,textarea):focus{outline:2px solid var(--acc);outline-offset:1px}
+.factions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.factions .hint{color:var(--mute);font-size:13px}
+.navbar .links a.hidep[hidden]{display:none}
+@media (max-width:520px){.navbar .links{gap:2px}.navbar .links a{padding-left:8px;padding-right:8px;font-size:14px}.navbar .links a.nm{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 
@@ -393,7 +468,8 @@ html,body{cursor:var(--cur-arrow)}
   <header class="navbar glass">
     <a class="brand" href="#top" aria-label="Back to top"><span class="face" aria-hidden="true"></span><span class="bt" id="brandName">Nik Rakar</span></a>
     <nav class="links" aria-label="Sections">
-      <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#work" data-t="nav.work">Work</a><a href="#about" class="nm" data-t="nav.about">About</a><a href="#prices" id="navPrices" data-t="nav.prices">Prices</a><a href="#contact" data-t="nav.contact">Contact</a>
+      <button class="lang hov" id="langBtn" type="button" aria-label="Slovenščina / English">SLO</button>
       <button class="round hov" id="theme" type="button" aria-label="Switch black / white"><span class="gi" style="--h:48" data-ic="sun"></span></button>
     </nav>
   </header>
@@ -404,16 +480,21 @@ html,body{cursor:var(--cur-arrow)}
     <p class="role" id="role">Photographer &amp; cinematographer</p>
     <div class="eyebrow">
       <span class="pill glass" id="locPill"><span class="gi sm" style="--h:190" data-ic="pin"></span><span id="loc">Ljubljana, Slovenia</span></span>
-      <span class="pill glass"><span class="gi sm" style="--h:268" data-ic="Film"></span>Photo &amp; video</span>
-      <span class="pill dot glass" id="avail"><i></i>Available for shoots</span>
+      <span class="pill glass"><span class="gi sm" style="--h:268" data-ic="Film"></span><span data-t="pill.pv">Photo &amp; video</span></span>
+      <span class="pill dot glass" id="avail"><i></i><span data-t="pill.avail">Available for shoots</span></span>
     </div>
   </section>
 
   <div id="coverSlot"></div>
 
+  <section class="sec" id="reel" hidden>
+    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:12" data-ic="play"></span><div><h2 data-t="reel.h">Showreel</h2><p class="sub" data-t="reel.sub">My best shots, in motion</p></div></div></div>
+    <div class="reelbox glass" id="reelBox"></div>
+  </section>
+
   <section class="sec" id="work">
     <div class="sh">
-      <div class="ttl"><span class="gi lg hov" style="--h:330" data-ic="camera"></span><div><h2>Selected work</h2><p class="sub" id="workSub">Portraits, cars, lifestyle and sport</p></div></div>
+      <div class="ttl"><span class="gi lg hov" style="--h:330" data-ic="camera"></span><div><h2 data-t="work.h">Selected work</h2><p class="sub" id="workSub" data-t="work.sub">Portraits, cars, street and sport</p></div></div>
       <div class="seg glass" id="chips" role="tablist" aria-label="Filter by category"></div>
     </div>
     <div id="wall" class="wall"></div>
@@ -421,27 +502,63 @@ html,body{cursor:var(--cur-arrow)}
   </section>
 
   <section class="sec" id="about">
-    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:42" data-ic="Portraits"></span><div><h2>About</h2><p class="sub">Who's behind the camera</p></div></div></div>
+    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:42" data-ic="Portraits"></span><div><h2 data-t="about.h">About</h2><p class="sub" data-t="about.sub">Who's behind the camera</p></div></div></div>
     <div class="about glass">
-      <figure class="aphoto" id="aPhoto"><img id="aImg" alt="Nik Rakar with his camera on a gimbal" loading="lazy" decoding="async"><figcaption class="glass mono">Behind the camera</figcaption></figure>
+      <figure class="aphoto" id="aPhoto"><img id="aImg" alt="Nik Rakar with his camera on a gimbal" loading="lazy" decoding="async"><figcaption class="glass mono" data-t="about.cap">Behind the camera</figcaption></figure>
       <div class="abody">
       <h3 id="aHead">Hi, I'm Nik.</h3>
       <div class="atext" id="aboutText"></div>
       <div class="facts row">
-        <div class="fact" id="fYearsBox"><span class="gi md" style="--h:30" data-ic="spark"></span><div><span>Shooting for</span><b id="fYears"></b></div></div>
-        <div class="fact" id="fGearBox"><span class="gi md" style="--h:220" data-ic="camera"></span><div><span>Camera</span><b id="fGear"></b></div></div>
-        <div class="fact"><span class="gi md" style="--h:190" data-ic="pin"></span><div><span>Based in</span><b id="fLoc">Ljubljana, Slovenia</b></div></div>
-        <div class="fact"><span class="gi md" style="--h:140" data-ic="heart"></span><div><span>Status</span><b id="fAvail">Taking on new shoots</b></div></div>
+        <div class="fact" id="fYearsBox"><span class="gi md" style="--h:30" data-ic="spark"></span><div><span data-t="f.years">Shooting for</span><b id="fYears"></b></div></div>
+        <div class="fact" id="fGearBox"><span class="gi md" style="--h:220" data-ic="camera"></span><div><span data-t="f.gear">Camera</span><b id="fGear"></b></div></div>
+        <div class="fact"><span class="gi md" style="--h:190" data-ic="pin"></span><div><span data-t="f.loc">Based in</span><b id="fLoc">Ljubljana, Slovenia</b></div></div>
+        <div class="fact"><span class="gi md" style="--h:140" data-ic="heart"></span><div><span data-t="f.status">Status</span><b id="fAvail">Taking on new shoots</b></div></div>
       </div>
       </div>
     </div>
     <div class="svcs" id="svc"></div>
   </section>
 
+  <section class="sec" id="cases" hidden>
+    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:205" data-ic="spark"></span><div><h2 data-t="cases.h">Projects</h2><p class="sub" data-t="cases.sub">Client work, from the brief to the result</p></div></div></div>
+    <div class="cases" id="caseList"></div>
+  </section>
+
+  <section class="sec" id="prices" hidden>
+    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:140" data-ic="camera"></span><div><h2 data-t="prices.h">Services &amp; prices</h2><p class="sub" data-t="prices.sub">Starting points. Every shoot is planned around you</p></div></div></div>
+    <div class="pkgs" id="pkgs"></div>
+  </section>
+
+  <section class="sec" id="process" hidden>
+    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:45" data-ic="pencil"></span><div><h2 data-t="process.h">How it works</h2><p class="sub" data-t="process.sub">From the first message to the final files</p></div></div></div>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <section class="sec" id="clients" hidden>
+    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:330" data-ic="heart"></span><div><h2 data-t="clients.h">Worked with</h2><p class="sub" data-t="clients.sub">Brands and people I've shot for</p></div></div></div>
+    <div class="brands" id="brands"></div>
+    <div class="quotes" id="quotes"></div>
+  </section>
+
+  <section class="sec" id="faq" hidden>
+    <div class="sh"><div class="ttl"><span class="gi lg hov" style="--h:200" data-ic="mail"></span><div><h2 data-t="faq.h">FAQ</h2><p class="sub" data-t="faq.sub">Quick answers before you book</p></div></div></div>
+    <div class="faqs" id="faqs"></div>
+  </section>
+
   <section class="sec" id="contact">
     <div class="contact glass">
-      <h2>Let's shoot</h2>
-      <p class="note">Tell me what you have in mind, where and when, and I'll get back to you with ideas and a quote.</p>
+      <h2 data-t="contact.h">Let's shoot</h2>
+      <p class="note" data-t="contact.note">Tell me what you have in mind, where and when, and I'll get back to you with ideas and a quote.</p>
+      <form class="form" id="enq" novalidate>
+        <label><span data-t="fm.name">Your name</span><input name="name" autocomplete="name" required></label>
+        <label><span data-t="fm.email">Your email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label><span data-t="fm.type">What do you need?</span><select name="type" id="enqType"></select></label>
+        <label><span data-t="fm.date">Date (if you know it)</span><input name="date" type="date"></label>
+        <label><span data-t="fm.where">Location</span><input name="where" placeholder="Ljubljana"></label>
+        <label><span data-t="fm.budget">Budget</span><select name="budget" id="enqBudget"></select></label>
+        <label class="full"><span data-t="fm.msg">Tell me more</span><textarea name="msg" id="enqMsg"></textarea></label>
+        <div class="factions full" id="enqActions"></div>
+      </form>
       <div class="crow" id="crow"></div>
     </div>
   </section>
@@ -449,7 +566,7 @@ html,body{cursor:var(--cur-arrow)}
 
   <main id="catPage" hidden>
     <section class="cat">
-      <a class="btn glass back" href="#work"><span aria-hidden="true">←</span> All work</a>
+      <a class="btn glass back" href="#work"><span aria-hidden="true">←</span> <span data-t="cat.back">All work</span></a>
       <div class="cathead glass">
         <span class="gi xl" id="catIcon"></span>
         <div class="catinfo">
@@ -462,6 +579,23 @@ html,body{cursor:var(--cur-arrow)}
       <div class="seg glass catchips" id="catChips" aria-label="Other categories"></div>
       <div id="catWall" class="wall"></div>
       <nav class="catnav" id="catNav" aria-label="Previous and next category"></nav>
+    </section>
+  </main>
+
+  <main id="casePage" hidden>
+    <section class="cat">
+      <a class="btn glass back" href="#cases"><span aria-hidden="true">←</span> <span data-t="case.back">All projects</span></a>
+      <div class="cathead glass">
+        <div class="catinfo">
+          <span class="mono" id="caseMeta"></span>
+          <h2 id="caseTitle"></h2>
+          <p id="caseSum"></p>
+        </div>
+      </div>
+      <div class="cgrid" id="caseBlocks"></div>
+      <div class="cvideo" id="caseVideo" hidden></div>
+      <div class="cwall" id="caseWall"></div>
+      <div class="factions" style="margin-top:20px"><a class="btn solid lg" href="#contact" data-t="case.cta">Plan a shoot like this →</a></div>
     </section>
   </main>
 
@@ -491,6 +625,10 @@ function applyCats(list){
   S.categories = cats.map(c => c.name);
   S.services = cats.map(c => ({name: c.name, what: c.what || "", kind: c.kind || ""}));
   S.pages = Object.fromEntries(cats.map(c => [c.name, c.description || ""]));
+  S.catSl = Object.fromEntries(cats.map(c => [c.name, c.name_sl || ""]));
+  S.whatSl = Object.fromEntries(cats.map(c => [c.name, c.what_sl || ""]));
+  S.pagesSl = Object.fromEntries(cats.map(c => [c.name, c.description_sl || ""]));
+  S.catById = Object.fromEntries(cats.map(c => [String(c.id), c.name]));
   cats.forEach(c => { const k = IC[c.icon] ? c.icon : (IC[c.name] ? c.name : "camera"); IC[c.name] = IC[k]; HUE[c.name] = HUE[k] ?? 210; });
 }
 /* Live data: GitHub's API returns the newest saved version instantly; the published copy is the fallback */
@@ -599,14 +737,14 @@ function visible(){ return featMode() ? picks() : S.items.filter(it => filter ==
 
 function render(){
   const p = S.profile;
-  $("role").textContent = p.role || "";
+  $("role").textContent = L(p, "role") || "";
   $("loc").textContent = p.location || "";
   $("fLoc").textContent = p.location || "—";
   $("locPill").hidden = !p.location;
   $("avail").hidden = !p.available;
-  $("fAvail").textContent = p.available ? "Taking on new shoots" : "Booked up for now";
-  $("aboutText").innerHTML = String(p.about || "").split(/\n\s*\n|\n/).map(t => t.trim()).filter(Boolean).map(t => `<p>${esc(t)}</p>`).join("");
-  $("aHead").textContent = p.headline || ("Hi, I'm " + ((p.name || "Nik").split(/\s+/)[0]) + ".");
+  $("fAvail").textContent = p.available ? tr("Taking on new shoots", "Sprejemam nova snemanja") : tr("Booked up for now", "Trenutno zaseden");
+  $("aboutText").innerHTML = String(L(p, "about") || "").split(/\n\s*\n|\n/).map(t => t.trim()).filter(Boolean).map(t => `<p>${esc(t)}</p>`).join("");
+  $("aHead").textContent = L(p, "headline") || ("Hi, I'm " + ((p.name || "Nik").split(/\s+/)[0]) + ".");
   { const ph = p.photo ? (/^(https?:|\/|data:)/.test(p.photo) ? p.photo : "/" + p.photo) : ""; $("aImg").src = ph; $("aPhoto").hidden = !ph; document.querySelector(".about")?.classList.toggle("nophoto", !ph); }
   $("fYears").textContent = p.years || ""; $("fYearsBox").hidden = !p.years;
   $("fGear").textContent = p.gear || ""; $("fGearBox").hidden = !p.gear;
@@ -615,21 +753,22 @@ function render(){
   $("lw1").textContent = parts[0];
   $("lw2").textContent = parts.slice(1).join(" ");
   $("brandName").textContent = p.name || "";
-  document.title = (p.name || "Nik Rakar") + " Portfolio";
+  document.title = (p.name || "Nik Rakar") + tr(" · Photographer & cinematographer, Ljubljana", " · Fotograf in snemalec, Ljubljana");
 
-  $("svc").innerHTML = (S.services || []).map(s => `<a class="svc glass hov" href="#${slug(s.name)}"><div class="hd">${gi(s.name)}<span class="mono">${esc(s.kind)}</span></div><div><b>${esc(s.name)}</b><p>${esc(s.what)}</p><p class="more">See the work →</p></div></a>`).join("");
+  $("svc").innerHTML = (S.services || []).map(s => `<a class="svc glass hov" href="#${slug(s.name)}"><div class="hd">${gi(s.name)}<span class="mono">${esc(s.kind)}</span></div><div><b>${esc(cn(s.name))}</b><p>${esc(LANG==="sl" && S.whatSl && S.whatSl[s.name] || s.what)}</p><p class="more">${tr("See the work →","Oglej si delo →")}</p></div></a>`).join("");
 
   const ig = (p.instagram || "").replace(/^@/, "").trim();
   let c = "";
-  if (p.email) c += `<div class="cbox hov">${gi("mail")}<div class="t"><span>Email</span><span class="v">${esc(p.email)}</span></div><button class="btn solid" type="button" data-copy="${esc(p.email)}">Copy</button></div>`;
-  if (ig) c += `<div class="cbox hov">${gi("social")}<div class="t"><span>Instagram</span><a class="v" href="https://www.instagram.com/${encodeURIComponent(ig)}/" target="_blank" rel="noopener">@${esc(ig)}</a></div><a class="btn solid" href="https://www.instagram.com/${encodeURIComponent(ig)}/" target="_blank" rel="noopener">Open ↗</a></div>`;
+  if (p.email) c += `<div class="cbox hov">${gi("mail")}<div class="t"><span>${tr("Email","E-pošta")}</span><span class="v">${esc(p.email)}</span></div><button class="btn solid" type="button" data-copy="${esc(p.email)}">${tr("Copy","Kopiraj")}</button></div>`;
+  if (ig) c += `<div class="cbox hov">${gi("social")}<div class="t"><span>Instagram</span><a class="v" href="https://www.instagram.com/${encodeURIComponent(ig)}/" target="_blank" rel="noopener">@${esc(ig)}</a></div><a class="btn solid" href="https://www.instagram.com/${encodeURIComponent(ig)}/" target="_blank" rel="noopener">${tr("Open ↗","Odpri ↗")}</a></div>`;
+  { const wa = waNum(); if (wa) c += `<div class="cbox hov">${gi("social")}<div class="t"><span>WhatsApp</span><a class="v" href="https://wa.me/${wa}" target="_blank" rel="noopener">+${esc(wa)}</a></div><a class="btn solid" href="https://wa.me/${wa}" target="_blank" rel="noopener">${tr("Chat ↗","Klepet ↗")}</a></div>`; }
   if (!c) c = `<div class="cbox">${gi("mail")}<div class="t"><span>Contact</span><span class="v" style="color:var(--mute)">${editing ? "Add your email and Instagram in Your details" : "Contact details coming soon"}</span></div></div>`;
   $("crow").innerHTML = c;
 
   const counts = {All:S.items.length}; S.categories.forEach(k => counts[k] = 0);
   S.items.forEach(it => { if (it.cat in counts) counts[it.cat]++; });
   $("chips").innerHTML = ["All", ...S.categories].filter(k => k === "All" || counts[k] || editing || !S.items.length).map(k =>
-    `<button class="chip hov${k===filter?" on":""}" type="button" role="tab" aria-selected="${k===filter}" data-f="${esc(k)}">${gi(k==="All"?"all":k,"sm")}${esc(k)}<small>${counts[k]}</small></button>`).join("");
+    `<button class="chip hov${k===filter?" on":""}" type="button" role="tab" aria-selected="${k===filter}" data-f="${esc(k)}">${gi(k==="All"?"all":k,"sm")}${esc(k==="All" ? tr("All","Vse") : cn(k))}<small>${counts[k]}</small></button>`).join("");
 
   renderCover();
   renderWall();
@@ -671,7 +810,7 @@ function renderMore(){
   const el = $("moreLinks");
   if (!featMode()) { el.innerHTML = ""; return; }
   const counts = {}; S.items.forEach(it => counts[it.cat] = (counts[it.cat] || 0) + 1);
-  el.innerHTML = S.categories.filter(c => counts[c]).map(c => `<a class="morelink glass hov" href="#${slug(c)}">${gi(c,"md")}<span><span class="mono">${counts[c]} ${counts[c] === 1 ? "piece" : "pieces"}</span><b>All ${esc(c.toLowerCase())}</b></span><span class="arr">→</span></a>`).join("")
+  el.innerHTML = S.categories.filter(c => counts[c]).map(c => `<a class="morelink glass hov" href="#${slug(c)}">${gi(c,"md")}<span><span class="mono">${counts[c]} ${pcs(counts[c])}</span><b>${LANG==="sl" ? esc(cn(c)) : "All " + esc(c.toLowerCase())}</b></span><span class="arr">→</span></a>`).join("")
     + `<button class="morelink glass hov shuf" type="button" id="shuffleBtn"><span class="gi md" style="--h:210">${svg("spark")}</span><span><span class="mono">Fresh mix</span><b>Shuffle</b></span></button>`;
 }
 document.addEventListener("click", e => {
@@ -996,16 +1135,16 @@ function renderCat(){
   const k = route, n = S.items.filter(it => it.cat === k).length, i = S.categories.indexOf(k);
   const svc = (S.services || []).find(x => x.name === k);
   $("catIcon").innerHTML = svg(k);
-  $("catTitle").textContent = k;
-  $("catMeta").textContent = (svc ? svc.kind + " · " : "") + n + (n === 1 ? " piece" : " pieces");
-  const d = (S.pages && S.pages[k]) || DESC[k] || (svc && svc.what) || "";
+  $("catTitle").textContent = cn(k);
+  $("catMeta").textContent = (svc ? svc.kind + " · " : "") + n + " " + pcs(n);
+  const d = (LANG === "sl" && S.pagesSl && S.pagesSl[k]) || (S.pages && S.pages[k]) || DESC[k] || (svc && svc.what) || "";
   $("catDesc").textContent = d;
   $("catEdit").hidden = !editing;
   if (editing && document.activeElement !== $("catDescIn")) $("catDescIn").value = d;
-  $("catChips").innerHTML = S.categories.map(c => `<button class="chip hov${c===k?" on":""}" type="button" data-f="${esc(c)}">${gi(c,"sm")}${esc(c)}</button>`).join("");
+  $("catChips").innerHTML = S.categories.map(c => `<button class="chip hov${c===k?" on":""}" type="button" data-f="${esc(c)}">${gi(c,"sm")}${esc(cn(c))}</button>`).join("");
   const prev = S.categories[(i - 1 + S.categories.length) % S.categories.length], next = S.categories[(i + 1) % S.categories.length];
-  $("catNav").innerHTML = `<a class="glass hov" href="#${slug(prev)}">${gi(prev,"md")}<span><span class="mono">← Previous</span><b>${esc(prev)}</b></span></a><a class="glass hov nx" href="#${slug(next)}"><span><span class="mono">Next →</span><b>${esc(next)}</b></span>${gi(next,"md")}</a>`;
-  document.title = k + " · " + (S.profile.name || "Nik Rakar");
+  $("catNav").innerHTML = `<a class="glass hov" href="#${slug(prev)}">${gi(prev,"md")}<span><span class="mono">${tr("← Previous","← Prejšnja")}</span><b>${esc(cn(prev))}</b></span></a><a class="glass hov nx" href="#${slug(next)}"><span><span class="mono">${tr("Next →","Naslednja →")}</span><b>${esc(cn(next))}</b></span>${gi(next,"md")}</a>`;
+  document.title = cn(k) + " · " + (S.profile.name || "Nik Rakar");
 }
 $("catDescIn").addEventListener("input", () => {
   S.pages = S.pages || {}; S.pages[route] = $("catDescIn").value; $("catDesc").textContent = $("catDescIn").value; markDirty();
@@ -1015,7 +1154,12 @@ function go(){
   const k = S.categories.find(c => slug(c) === h) || null;
   const was = route;
   route = k;
-  $("home").hidden = !!k; $("catPage").hidden = !k;
+  const wasCase = caseRoute;
+  const cs = !k && h.startsWith("case-") ? (B.cases || []).find(c => "case-" + caseSlug(c) === h) || null : null;
+  caseRoute = cs;
+  $("home").hidden = !!k || !!cs; $("catPage").hidden = !k; $("casePage").hidden = !cs;
+  if (cs) requestAnimationFrame(() => scrollTo({top:0, behavior:"instant"}));
+  else if (wasCase && !k) requestAnimationFrame(() => { const t = h && document.getElementById(h); t ? t.scrollIntoView() : scrollTo({top:0}); });
   filter = k || "All";
   render();
   if (k && editing) $("upCat").value = k;
@@ -1024,6 +1168,203 @@ function go(){
   else if (was) { const t = h && document.getElementById(h); t ? t.scrollIntoView() : scrollTo({top:0}); }
 }
 addEventListener("hashchange", go);
+
+/* ---------- client features: Slovenian version, showreel, projects, prices, process, clients, FAQ, enquiry form ---------- */
+let B = {}, caseRoute = null;
+let LANG = (() => { try { const v = localStorage.getItem("lang"); if (v === "sl" || v === "en") return v; } catch {} return /^sl/i.test(navigator.language || "") ? "sl" : "en"; })();
+const tr = (en, sl) => (LANG === "sl" && sl) ? sl : en;
+const L = (o, f) => !o ? "" : (LANG === "sl" && o[f + "_sl"]) ? o[f + "_sl"] : (o[f] || "");
+const cn = k => (LANG === "sl" && S.catSl && S.catSl[k]) || k;
+const pcs = n => LANG === "sl" ? (n % 100 === 1 ? "delo" : n % 100 === 2 ? "deli" : (n % 100 === 3 || n % 100 === 4) ? "dela" : "del") : (n === 1 ? "piece" : "pieces");
+const asset = u => !u ? "" : /^(https?:|\/|data:)/.test(u) ? u : "/" + u;
+const caseSlug = c => String(c.slug || c.title || "project").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const waNum = () => String((B.contact && B.contact.whatsapp) || "").replace(/[^\d]/g, "");
+const SL = {
+  "nav.work":"Delo","nav.about":"O meni","nav.prices":"Cene","nav.contact":"Kontakt",
+  "pill.pv":"Foto in video","pill.avail":"Na voljo za snemanja",
+  "reel.h":"Showreel","reel.sub":"Moji najboljši posnetki v gibanju",
+  "work.h":"Izbrano delo","work.sub":"Portreti, avtomobili, ulica in šport",
+  "about.h":"O meni","about.sub":"Kdo je za kamero","about.cap":"Za kamero",
+  "f.years":"Fotografiram že","f.gear":"Fotoaparat","f.loc":"Lokacija","f.status":"Status",
+  "cases.h":"Projekti","cases.sub":"Delo za stranke, od ideje do rezultata",
+  "prices.h":"Storitve in cene","prices.sub":"Izhodišča. Vsako snemanje prilagodim tebi",
+  "process.h":"Kako poteka","process.sub":"Od prvega sporočila do končnih datotek",
+  "clients.h":"Sodelovanja","clients.sub":"Znamke in ljudje, s katerimi sem delal",
+  "faq.h":"Pogosta vprašanja","faq.sub":"Hitri odgovori pred rezervacijo",
+  "contact.h":"Posnemiva","contact.note":"Povej mi, kaj imaš v mislih, kje in kdaj, in odgovoril ti bom z idejami in ponudbo.",
+  "fm.name":"Tvoje ime","fm.email":"Tvoj e-naslov","fm.type":"Kaj potrebuješ?","fm.date":"Datum (če ga že veš)","fm.where":"Lokacija","fm.budget":"Proračun","fm.msg":"Povej mi več",
+  "case.back":"Vsi projekti","case.cta":"Načrtujva podobno snemanje →","cat.back":"Vse delo"
+};
+function applyLang(){
+  document.documentElement.lang = LANG;
+  document.querySelectorAll("[data-t]").forEach(el => {
+    if (el.dataset.en == null) el.dataset.en = el.innerHTML;
+    el.innerHTML = LANG === "sl" && SL[el.dataset.t] ? SL[el.dataset.t] : el.dataset.en;
+  });
+  const lb = $("langBtn"); lb.textContent = LANG === "sl" ? "ENG" : "SLO"; lb.setAttribute("aria-label", LANG === "sl" ? "Switch to English" : "Preklopi v slovenščino");
+  const md = document.querySelector('meta[name="description"]');
+  if (md) md.content = tr("Nik Rakar, photographer and cinematographer from Ljubljana, Slovenia. Portraits, car photography, street, sport and brand video.", "Nik Rakar, fotograf in snemalec iz Ljubljane. Portretna fotografija, fotografiranje avtomobilov, ulična in športna fotografija ter video za znamke.");
+}
+$("langBtn").addEventListener("click", () => {
+  LANG = LANG === "sl" ? "en" : "sl";
+  try { localStorage.setItem("lang", LANG); } catch {}
+  const keep = enqValues(); render(); enqFill(keep);
+});
+
+function renderReel(){
+  const r = B.showreel || {}, box = $("reelBox");
+  const it = r.url ? {kind:"link", url:r.url, poster:r.poster} : null;
+  const e = it && embedOf(it), file = r.src ? asset(r.src) : "";
+  $("reel").hidden = !(e || file);
+  if (box.dataset.k === (r.url || "") + "|" + file) return;
+  box.dataset.k = (r.url || "") + "|" + file;
+  if (file) box.innerHTML = `<video src="${esc(file)}"${r.poster ? ` poster="${esc(asset(r.poster))}"` : ""} autoplay muted loop playsinline preload="metadata"></video><button class="btn solid lg reelbtn" type="button" data-reel="sound">${gi("play","sm")}${tr("Watch with sound","Poglej z zvokom")}</button>`;
+  else if (e) box.innerHTML = `${e.poster ? `<img src="${esc(asset(e.poster))}" alt="" loading="lazy">` : ""}<button class="btn solid lg reelbtn" type="button" data-reel="play">${gi("play","sm")}${tr("Play showreel","Predvajaj showreel")}</button>`;
+  else box.innerHTML = "";
+}
+$("reelBox").addEventListener("click", e => {
+  const b = e.target.closest("[data-reel]"); if (!b) return;
+  const box = $("reelBox"), r = B.showreel || {};
+  if (b.dataset.reel === "sound") { const v = box.querySelector("video"); v.muted = false; v.controls = true; v.currentTime = 0; v.play(); b.remove(); }
+  else { const em = embedOf({kind:"link", url:r.url}); if (em) box.innerHTML = `<iframe src="${em.embed}" title="Showreel" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>`; }
+});
+
+function renderCases(){
+  const cs = (B.cases || []).filter(c => c && c.title);
+  $("cases").hidden = !cs.length;
+  $("caseList").innerHTML = cs.map(c => `<a class="case glass hov" href="#case-${caseSlug(c)}">${c.cover ? `<div class="ci"><img src="${esc(asset(c.cover))}" alt="" loading="lazy" decoding="async"></div>` : ""}<div class="cb"><span class="mono" style="color:var(--mute);font-size:11px">${esc([c.client, c.cat ? cn(catName(c.cat)) : ""].filter(Boolean).join(" · "))}</span><b>${esc(L(c,"title"))}</b><p>${esc(L(c,"summary"))}</p><p class="more" style="margin-top:6px;color:var(--fg);font-weight:500">${tr("See the project →","Oglej si projekt →")}</p></div></a>`).join("");
+}
+const catName = id => (S.catById && S.catById[id]) || id;
+let casePics = [];
+function renderCase(){
+  const c = caseRoute; if (!c) return;
+  $("caseMeta").textContent = [c.client, c.cat ? cn(catName(c.cat)) : "", c.year].filter(Boolean).join(" · ");
+  $("caseTitle").textContent = L(c, "title");
+  $("caseSum").textContent = L(c, "summary");
+  $("caseBlocks").innerHTML = [["brief", tr("The brief","Izziv")], ["delivered", tr("What I delivered","Kaj sem naredil")], ["result", tr("The result","Rezultat")]]
+    .filter(([f]) => L(c, f)).map(([f, h]) => `<div class="cblock glass"><span class="mono" style="color:var(--mute);font-size:11px">${h}</span><p>${esc(L(c, f))}</p></div>`).join("");
+  const em = c.video_url && embedOf({kind:"link", url:c.video_url});
+  const vf = c.video ? asset(c.video) : "";
+  $("caseVideo").hidden = !(em || vf);
+  const vk = (c.video_url || "") + vf;
+  if ($("caseVideo").dataset.k !== vk) { $("caseVideo").dataset.k = vk; $("caseVideo").innerHTML = em ? `<iframe src="${em.embed.replace("autoplay=1","autoplay=0")}" title="${esc(c.title)}" allow="fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>` : vf ? `<video src="${esc(vf)}" controls playsinline preload="metadata"></video>` : ""; }
+  casePics = (c.photos || []).map(x => typeof x === "string" ? x : x && x.src).filter(Boolean).map(u => ({kind:"image", src:asset(u), cat: catName(c.cat) || "", title: c.title}));
+  $("caseWall").innerHTML = casePics.map((it, i) => `<button type="button" data-cp="${i}"><img src="${esc(it.src)}" alt="${esc(c.title)}" loading="lazy" decoding="async"></button>`).join("");
+  document.title = L(c, "title") + " · " + (S.profile.name || "Nik Rakar");
+}
+$("caseWall").addEventListener("click", e => {
+  const b = e.target.closest("[data-cp]"); if (!b) return;
+  lbList = casePics; lbPos = +b.dataset.cp; lbFromEl = null;
+  const lb = $("lb"); lb.classList.remove("closing"); lb.classList.toggle("single", lbList.length < 2);
+  lb.hidden = false; document.body.style.overflow = "hidden";
+  $("lbStrip").innerHTML = lbList.map((it, n) => `<button type="button" data-k="${n}" aria-label="Show ${n+1}"><img src="${esc(it.src)}" alt="" loading="lazy"></button>`).join("");
+  showLb(0, true); $("lbClose").focus();
+});
+
+function renderPkgs(){
+  const ps = (B.packages || []).filter(x => x && x.name);
+  $("prices").hidden = !ps.length; $("navPrices").hidden = !ps.length;
+  $("pkgs").innerHTML = ps.map((x, i) => {
+    const inc = String(L(x, "includes") || "").split("\n").map(t => t.trim()).filter(Boolean);
+    const price = String(x.price || "").trim();
+    return `<div class="pkg glass${x.featured ? " feat" : ""}"><div class="hd">${gi(x.icon || "camera")}${x.featured ? `<span class="mono" style="font-size:10.5px;padding:4px 8px;border-radius:99px;background:var(--fg);color:var(--bg)">${tr("Popular","Priljubljeno")}</span>` : ""}</div>
+      <div><span class="n">${esc(L(x,"name"))}</span><p class="d" style="margin-top:6px">${esc(L(x,"desc"))}</p></div>
+      ${price ? `<div class="price"><small>${tr("from","od")}</small>${esc(price)}</div>` : `<div class="price ask">${tr("Price on request","Cena po dogovoru")}</div>`}
+      ${inc.length ? `<ul>${inc.map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
+      <a class="btn solid" href="#contact" data-pkg="${i}">${tr("Ask about this","Povprašaj")}</a></div>`;
+  }).join("");
+}
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-pkg]"); if (!a) return;
+  const x = (B.packages || []).filter(x => x && x.name)[+a.dataset.pkg]; if (!x) return;
+  const sel = $("enqType"), v = L(x, "name");
+  if (![...sel.options].some(o => o.value === v)) sel.add(new Option(v, v), 0);
+  sel.value = v;
+  setTimeout(() => $("enq").querySelector('[name="name"]').focus({preventScroll:true}), 600);
+});
+
+function renderSteps(){
+  const st = (B.steps || []).filter(x => x && x.title);
+  $("process").hidden = !st.length;
+  $("steps").innerHTML = st.map((x, i) => `<li class="step glass"><span class="num">${String(i + 1).padStart(2, "0")}</span><b>${esc(L(x,"title"))}</b><p>${esc(L(x,"text"))}</p></li>`).join("");
+}
+function renderClients(){
+  const br = (B.brands || []).filter(x => x && (x.name || x.logo)), qs = (B.quotes || []).filter(x => x && x.quote);
+  $("clients").hidden = !br.length && !qs.length;
+  $("brands").innerHTML = br.map(x => { const inner = x.logo ? `<img src="${esc(asset(x.logo))}" alt="${esc(x.name || "")}" loading="lazy">` : esc(x.name); return x.url ? `<a class="brandl glass hov" href="${esc(x.url)}" target="_blank" rel="noopener">${inner}</a>` : `<div class="brandl glass">${inner}</div>`; }).join("");
+  $("brands").hidden = !br.length;
+  $("quotes").innerHTML = qs.map(x => `<figure class="quote glass"><blockquote>${esc(L(x,"quote"))}</blockquote><figcaption><b>${esc(x.name || "")}</b>${esc(L(x,"role"))}</figcaption></figure>`).join("");
+  $("quotes").hidden = !qs.length;
+}
+function renderFaq(){
+  const fs = (B.faq || []).filter(x => x && x.q);
+  $("faq").hidden = !fs.length;
+  const open = [...$("faqs").querySelectorAll("details")].map(d => d.open);
+  $("faqs").innerHTML = fs.map((x, i) => `<details class="faq glass"${open[i] ? " open" : ""}><summary>${esc(L(x,"q"))}<i aria-hidden="true">+</i></summary><p>${esc(L(x,"a"))}</p></details>`).join("");
+}
+
+/* enquiry form: writes the message for the visitor, then opens their email app, Instagram or WhatsApp */
+const BUDGETS = [["", "Not sure yet", "Še ne vem"], ["< €150", "Under €150", "Do 150 €"], ["€150–300", "€150–300", "150–300 €"], ["€300–600", "€300–600", "300–600 €"], ["€600+", "€600+", "600 € +"]];
+function enqValues(){ const f = $("enq"); return f.elements ? Object.fromEntries(new FormData(f)) : {}; }
+function enqFill(v){ const f = $("enq"); if (!f.elements) return; Object.entries(v || {}).forEach(([k, val]) => { const el = f.elements[k]; if (!el) return; if (el.tagName === "SELECT" && val && ![...el.options].some(o => o.value === val)) el.add(new Option(val, val), 0); el.value = val; }); }
+function renderForm(){
+  const keep = enqValues();
+  const types = [...S.categories.map(k => cn(k)), tr("Brand content (photo + video)","Vsebina za znamko (foto + video)"), tr("Event","Dogodek"), tr("Something else","Nekaj drugega")];
+  $("enqType").innerHTML = types.map(t => `<option>${esc(t)}</option>`).join("");
+  $("enqBudget").innerHTML = BUDGETS.map(b => `<option value="${esc(b[1])}">${esc(tr(b[1], b[2]))}</option>`).join("");
+  $("enqMsg").placeholder = tr("The idea, the look you like, links for inspiration…", "Ideja, stil, ki ti je všeč, povezave za navdih …");
+  const p = S.profile, ig = (p.instagram || "").replace(/^@/, "").trim(), wa = waNum();
+  $("enqActions").innerHTML = (p.email ? `<button class="btn solid lg" type="submit">${gi("mail","sm")}${tr("Send enquiry","Pošlji povpraševanje")}</button>` : "")
+    + (ig ? `<button class="btn ghost lg" type="button" data-send="ig">${gi("social","sm")}${tr("Send on Instagram","Pošlji na Instagramu")}</button>` : "")
+    + (wa ? `<button class="btn ghost lg" type="button" data-send="wa">${gi("social","sm")}WhatsApp</button>` : "")
+    + `<span class="hint">${esc(L(B.contact || {}, "response") || tr("Opens your email app with everything filled in.", "Odpre tvojo e-pošto z že izpolnjenim sporočilom."))}</span>`;
+  enqFill(keep);
+}
+function enqText(){
+  const v = enqValues(), lines = [
+    tr("Hi Nik,", "Živijo Nik,"), "",
+    v.msg ? v.msg.trim() : tr("I'd like to book a shoot.", "Rad/a bi rezerviral/a snemanje."), "",
+    [`${tr("Shoot","Snemanje")}: ${v.type || "-"}`,
+     v.date ? `${tr("Date","Datum")}: ${v.date}` : "",
+     v.where ? `${tr("Location","Lokacija")}: ${v.where}` : "",
+     v.budget ? `${tr("Budget","Proračun")}: ${v.budget}` : ""].filter(Boolean).join("\n"), "",
+    v.name || "", v.email || ""
+  ];
+  return {v, text: lines.join("\n").replace(/\n{3,}/g, "\n\n").replace(/^(.+: .*)\n\n(?=.+: )/gm, "$1\n").trim()};
+}
+function enqCheck(){
+  const f = $("enq"), n = f.elements.name, m = f.elements.email;
+  if (!n.value.trim()) { n.focus(); toast(tr("Add your name first","Najprej dodaj svoje ime")); return false; }
+  if (m.value && !m.checkValidity()) { m.focus(); toast(tr("Check your email address","Preveri e-naslov")); return false; }
+  return true;
+}
+$("enq").addEventListener("submit", e => {
+  e.preventDefault(); if (!enqCheck()) return;
+  const {v, text} = enqText(), to = S.profile.email;
+  location.href = `mailto:${to}?subject=${encodeURIComponent(tr("Shoot enquiry", "Povpraševanje za snemanje") + ": " + (v.type || "") + (v.name ? " · " + v.name : ""))}&body=${encodeURIComponent(text)}`;
+  toast(tr("Your email app is opening. Just press send.", "Odpira se tvoja e-pošta. Samo pritisni pošlji."));
+});
+$("enq").addEventListener("click", async e => {
+  const b = e.target.closest("[data-send]"); if (!b) return;
+  if (!enqCheck()) return;
+  const {text} = enqText();
+  if (b.dataset.send === "wa") { open(`https://wa.me/${waNum()}?text=${encodeURIComponent(text)}`, "_blank", "noopener"); return; }
+  try { await navigator.clipboard.writeText(text); toast(tr("Message copied. Paste it in the Instagram chat.", "Sporočilo je kopirano. Prilepi ga v klepet na Instagramu.")); } catch {}
+  open(`https://ig.me/m/${encodeURIComponent((S.profile.instagram || "").replace(/^@/, ""))}`, "_blank", "noopener");
+});
+
+async function loadBiz(){
+  let j = null;
+  try { if (typeof liveData === "function") j = await liveData("data/business.json"); } catch {}
+  if (!j) { try { const r = await fetch("data/business.json?t=" + Date.now(), {cache:"no-store"}); if (r.ok) j = await r.json(); } catch {} }
+  B = j && typeof j === "object" ? j : {};
+}
+const _renderBase = render;
+render = function(){
+  _renderBase();
+  renderReel(); renderCases(); renderPkgs(); renderSteps(); renderClients(); renderFaq(); renderForm(); renderCase();
+  applyLang();
+};
 
 /* ---------- boot ---------- */
 async function load(){
@@ -1040,6 +1381,7 @@ async function load(){
       applyCats(cj && Array.isArray(cj.cats) ? cj.cats : null);
     }
   } catch {}
+  await loadBiz();
   go();
 }
 
@@ -1128,8 +1470,8 @@ addEventListener("hashchange", () => {
 // copy button feedback
 $("crow").addEventListener("click", e => {
   const b = e.target.closest("[data-copy]"); if (!b) return;
-  b.classList.add("done"); b.textContent = "Copied ✓";
-  setTimeout(() => { b.classList.remove("done"); b.textContent = "Copy"; }, 1600);
+  b.classList.add("done"); b.textContent = tr("Copied ✓","Kopirano ✓");
+  setTimeout(() => { b.classList.remove("done"); b.textContent = tr("Copy","Kopiraj"); }, 1600);
 });
 render();
 load();

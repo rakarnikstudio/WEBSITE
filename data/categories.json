@@ -1,44 +1,59 @@
 {
-  "cats": [
-    {
-      "id": "portraits",
-      "name": "Portraits",
-      "icon": "Portraits",
-      "what": "Headshots, editorial, personal shoots",
-      "kind": "Photo",
-      "description": "Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us."
-    },
-    {
-      "id": "automotive",
-      "name": "Automotive",
-      "icon": "Automotive",
-      "what": "Rollers, statics, car meets and events",
-      "kind": "Photo · Video",
-      "description": "Cars in motion and at rest: rolling shots, statics, details and car meets, on stills and on video."
-    },
-    {
-      "id": "lifestyle",
-      "name": "Street photography",
-      "icon": "city",
-      "what": "Streets and moments of the world.",
-      "kind": "Photo · Video",
-      "description": "Everyday moments and brand content. Real people in real places, made for social media and campaigns."
-    },
-    {
-      "id": "sports",
-      "name": "Sports",
-      "icon": "Sports",
-      "what": "Action, teams, matches and events",
-      "kind": "Photo",
-      "description": "Action, teams and match days. Peak moments and the energy around the game."
-    },
-    {
-      "id": "film",
-      "name": "Film",
-      "icon": "Film",
-      "what": "Short films, reels and edits",
-      "kind": "Video",
-      "description": "Short films, reels and edits, from planning the shots to the final cut."
-    }
-  ]
+ "cats": [
+  {
+   "id": "portraits",
+   "name": "Portraits",
+   "name_sl": "Portreti",
+   "icon": "Portraits",
+   "what": "Headshots, editorial, personal shoots",
+   "what_sl": "Poslovni, editorial in osebni portreti",
+   "kind": "Photo",
+   "description": "Headshots, editorial portraits and personal shoots. People as they are, around Ljubljana and wherever the story takes us.",
+   "description_sl": "Poslovni in editorial portreti ter osebna fotografiranja. Ljudje takšni, kot so, po Ljubljani in povsod, kamor nas pelje zgodba."
+  },
+  {
+   "id": "automotive",
+   "name": "Automotive",
+   "name_sl": "Avtomobili",
+   "icon": "Automotive",
+   "what": "Rollers, statics, car meets and events",
+   "what_sl": "Posnetki v vožnji, statični posnetki, srečanja in dogodki",
+   "kind": "Photo · Video",
+   "description": "Cars in motion and at rest: rolling shots, statics, details and car meets, on stills and on video.",
+   "description_sl": "Avtomobili v gibanju in mirovanju: posnetki v vožnji, statični posnetki, detajli in srečanja, na fotografijah in v videu."
+  },
+  {
+   "id": "lifestyle",
+   "name": "Street photography",
+   "name_sl": "Ulična fotografija",
+   "icon": "city",
+   "what": "Streets and moments of the world.",
+   "what_sl": "Ulice in trenutki sveta.",
+   "kind": "Photo · Video",
+   "description": "Everyday moments and brand content. Real people in real places, made for social media and campaigns.",
+   "description_sl": "Vsakdanji trenutki in vsebina za znamke. Resnični ljudje na resničnih krajih, za družbena omrežja in kampanje."
+  },
+  {
+   "id": "sports",
+   "name": "Sports",
+   "name_sl": "Šport",
+   "icon": "Sports",
+   "what": "Action, teams, matches and events",
+   "what_sl": "Akcija, ekipe, tekme in dogodki",
+   "kind": "Photo",
+   "description": "Action, teams and match days. Peak moments and the energy around the game.",
+   "description_sl": "Akcija, ekipe in tekmovalni dnevi. Vrhunski trenutki in energija okoli igre."
+  },
+  {
+   "id": "film",
+   "name": "Film",
+   "name_sl": "Film",
+   "icon": "Film",
+   "what": "Short films, reels and edits",
+   "what_sl": "Kratki filmi, videi in montaže",
+   "kind": "Video",
+   "description": "Short films, reels and edits, from planning the shots to the final cut.",
+   "description_sl": "Kratki filmi, videi in montaže, od načrtovanja posnetkov do končne montaže."
+  }
+ ]
 }
