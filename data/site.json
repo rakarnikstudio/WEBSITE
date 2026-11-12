@@ -2,27 +2,6 @@
   "items": [
     {
       "kind": "image",
-      "src": "/photos/IMG_1184.webp",
-      "cat": "automotive",
-      "title": "",
-      "cover": false
-    },
-    {
-      "kind": "image",
-      "src": "/photos/IMG_1180.webp",
-      "cat": "automotive",
-      "title": "",
-      "cover": false
-    },
-    {
-      "kind": "image",
-      "src": "/photos/IMG_1201.webp",
-      "cat": "automotive",
-      "title": "",
-      "cover": false
-    },
-    {
-      "kind": "image",
       "src": "/photos/_DSC8429-1.webp",
       "cat": "lifestyle",
       "title": "",
