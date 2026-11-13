@@ -23,6 +23,12 @@
    "logo": "/photos/brands/rio-mare.png",
    "url": "https://www.riomare.si/",
    "colors": "mono"
+  },
+  {
+   "name": "Roots",
+   "logo": "/photos/brands/roots.png",
+   "url": "",
+   "colors": "mono"
   }
  ]
 }
