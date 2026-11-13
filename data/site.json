@@ -2,6 +2,34 @@
   "items": [
     {
       "kind": "image",
+      "src": "/photos/_DSC9774.webp",
+      "cat": "portraits",
+      "title": "",
+      "cover": false
+    },
+    {
+      "kind": "image",
+      "src": "/photos/_DSC9679.webp",
+      "cat": "portraits",
+      "title": "",
+      "cover": false
+    },
+    {
+      "kind": "image",
+      "src": "/photos/_DSC9779.webp",
+      "cat": "portraits",
+      "title": "",
+      "cover": false
+    },
+    {
+      "kind": "image",
+      "src": "/photos/_DSC9693-1.webp",
+      "cat": "portraits",
+      "title": "",
+      "cover": false
+    },
+    {
+      "kind": "image",
       "src": "/photos/_DSC8429-1.webp",
       "cat": "lifestyle",
       "title": "",
@@ -123,41 +151,6 @@
       "kind": "image",
       "src": "/photos/_DSC8409.webp",
       "cat": "lifestyle",
-      "title": "",
-      "cover": false
-    },
-    {
-      "kind": "image",
-      "src": "/photos/_DSC9771.webp",
-      "cat": "portraits",
-      "title": "",
-      "cover": false
-    },
-    {
-      "kind": "image",
-      "src": "/photos/_DSC9750.webp",
-      "cat": "portraits",
-      "title": "",
-      "cover": false
-    },
-    {
-      "kind": "image",
-      "src": "/photos/_DSC9836.webp",
-      "cat": "portraits",
-      "title": "",
-      "cover": false
-    },
-    {
-      "kind": "image",
-      "src": "/photos/_DSC9693.webp",
-      "cat": "portraits",
-      "title": "",
-      "cover": false
-    },
-    {
-      "kind": "image",
-      "src": "/photos/_DSC9795.webp",
-      "cat": "portraits",
       "title": "",
       "cover": false
     },
