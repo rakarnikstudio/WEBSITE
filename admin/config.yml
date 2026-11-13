@@ -189,6 +189,47 @@ collections:
     - name: pages
       widget: hidden
       required: false
+  - name: brands
+    label: Collaborations (client logos)
+    file: data/brands.json
+    format: json
+    description: Client and partner logos shown under Collaborations on the Work page. Click + Add, upload the logo, paste their website, then Save. Logos turn white or black with the site theme automatically.
+    fields:
+    - name: logos
+      label: Logos
+      label_singular: Logo
+      widget: list
+      collapsed: true
+      add_to_top: false
+      summary: '{{fields.name}}'
+      thumbnail: logo
+      hint: Only add brands that are OK with being shown. Drag to change the order
+      fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: e.g. Rio Mare
+      - name: logo
+        label: Logo
+        widget: image
+        required: false
+        media_folder: /photos/brands
+        public_folder: /photos/brands
+        hint: PNG or SVG works best; any background is removed automatically
+      - name: url
+        label: Website or Instagram link
+        widget: string
+        required: false
+        hint: Opens when someone clicks the logo, e.g. https://www.riomare.si/
+      - name: colors
+        label: Logo colours
+        widget: select
+        default: mono
+        options:
+        - label: One colour (white on dark, black on light)
+          value: mono
+        - label: Keep original colours
+          value: original
   - name: categories
     label: Categories
     file: data/categories.json
@@ -274,7 +315,7 @@ collections:
     label: Clients page
     file: data/business.json
     format: json
-    description: Services, how it works, FAQ, brands, client quotes, projects and showreel. Empty sections stay hidden on the site. Fields marked (Slovenian) show when visitors switch to SLO.
+    description: Services, how it works, FAQ, client quotes, projects and showreel. Empty sections stay hidden on the site. Fields marked (Slovenian) show when visitors switch to SLO.
     fields:
     - name: showreel
       label: Showreel
@@ -385,27 +426,6 @@ collections:
       - name: a_sl
         label: Answer (Slovenian)
         widget: text
-        required: false
-    - name: brands
-      label: Brands you worked with
-      label_singular: Brand
-      widget: list
-      collapsed: true
-      summary: '{{fields.name}}'
-      hint: Only add brands that are OK with being shown
-      fields:
-      - name: name
-        label: Brand name
-        widget: string
-        required: true
-      - name: logo
-        label: Logo (optional)
-        widget: image
-        required: false
-        hint: PNG with a transparent background looks best
-      - name: url
-        label: Website or Instagram link (optional)
-        widget: string
         required: false
     - name: quotes
       label: Client quotes

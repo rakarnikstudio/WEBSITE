@@ -1,0 +1,28 @@
+{
+ "logos": [
+  {
+   "name": "RCN Nepremičnine",
+   "logo": "/photos/brands/rcn-nepremicnine.svg",
+   "url": "https://www.rcn.si/",
+   "colors": "mono"
+  },
+  {
+   "name": "32 Drift Squadron",
+   "logo": "/photos/brands/32-drift-squadron.png",
+   "url": "https://www.driftsquadron.com/",
+   "colors": "mono"
+  },
+  {
+   "name": "Srednja šola za oblikovanje in fotografijo Ljubljana",
+   "logo": "/photos/brands/ssof-oblikovna.png",
+   "url": "https://www.oblikovna.si/",
+   "colors": "mono"
+  },
+  {
+   "name": "Rio Mare",
+   "logo": "/photos/brands/rio-mare.png",
+   "url": "https://www.riomare.si/",
+   "colors": "mono"
+  }
+ ]
+}
